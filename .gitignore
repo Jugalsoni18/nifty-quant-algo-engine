@@ -1,4 +1,5 @@
 *.pkl
+__pycache__/
 venv/
 .venv/
 nifty_v12_l3_models/
