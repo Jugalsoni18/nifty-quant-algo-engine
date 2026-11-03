@@ -1,0 +1,1541 @@
+09:21:41  INFO   ============================================================
+09:21:41  INFO     v14 L5 STANDALONE PAPER TRADER  started  2026-10-16 09:21:41
+09:21:41  INFO     Log file : c:\niftytrading\logs\paper_trade_l3_dynamic_2026-10-16.log
+09:21:41  INFO   ============================================================
+09:21:41  INFO   dhanhq version : unknown
+09:21:41  INFO   Feed class     : MarketFeed  sig=(self, dhan_context, instruments, version='v2', on_connect=None, on_message=None, on_close=None, on_error=None, on_ticks=None)
+09:21:41  INFO   marketfeed dir : ['MarketFeed', 'asyncio', 'datetime', 'defaultdict', 'json', 'struct', 'timezone', 'websockets']
+09:21:42  INFO   India VIX from NSE: 14.42 (attempt 1)
+09:21:43  INFO   kite_auth: ✅ Authenticated as [REDACTED_USER_NAME] ([REDACTED_KITE_USER_ID])
+09:21:43  INFO   InstrumentMapper: loaded from cache expiry=2026-10-19
+09:21:43  INFO   InstrumentMapper: downloading Dhan detailed scrip master CSV...
+09:21:45  INFO   InstrumentMapper: Dhan raw rows = 210,226
+09:21:45  INFO   InstrumentMapper: Dhan columns = ['EXCH_ID', 'SEGMENT', 'SECURITY_ID', 'ISIN', 'INSTRUMENT', 'UNDERLYING_SECURITY_ID', 'UNDERLYING_SYMBOL', 'SYMBOL_NAME', 'DISPLAY_NAME', 'INSTRUMENT_TYPE', 'SERIES', 'LOT_SIZE', 'SM_EXPIRY_DATE', 'STRIKE_PRICE', 'OPTION_TYPE', 'TICK_SIZE', 'EXPIRY_FLAG', 'BRACKET_FLAG', 'COVER_FLAG', 'ASM_GSM_FLAG', 'ASM_GSM_CATEGORY', 'BUY_SELL_INDICATOR', 'BUY_CO_MIN_MARGIN_PER', 'BUY_CO_SL_RANGE_MAX_PERC', 'BUY_CO_SL_RANGE_MIN_PERC', 'BUY_BO_MIN_MARGIN_PER', 'BUY_BO_PROFIT_RANGE_MAX_PERC', 'BUY_BO_PROFIT_RANGE_MIN_PERC', 'MTF_LEVERAGE', 'SM_UPPER_LIMIT', 'SM_LOWER_LIMIT', 'SM_FREEZE_QTY', 'Unnamed: 32']
+09:21:45  INFO   InstrumentMapper: Dhan sample rows:
+  EXCH_ID SEGMENT  SECURITY_ID ISIN INSTRUMENT  UNDERLYING_SECURITY_ID UNDERLYING_SYMBOL SYMBOL_NAME    DISPLAY_NAME INSTRUMENT_TYPE SERIES  LOT_SIZE SM_EXPIRY_DATE  STRIKE_PRICE OPTION_TYPE  TICK_SIZE EXPIRY_FLAG BRACKET_FLAG COVER_FLAG ASM_GSM_FLAG ASM_GSM_CATEGORY BUY_SELL_INDICATOR  BUY_CO_MIN_MARGIN_PER  BUY_CO_SL_RANGE_MAX_PERC  BUY_CO_SL_RANGE_MIN_PERC  BUY_BO_MIN_MARGIN_PER  BUY_BO_PROFIT_RANGE_MAX_PERC  BUY_BO_PROFIT_RANGE_MIN_PERC  MTF_LEVERAGE  SM_UPPER_LIMIT  SM_LOWER_LIMIT  SM_FREEZE_QTY  Unnamed: 32
+0     BSE       C      1026077  NaN     FUTCUR                   600.0            USDINR      USDINR  USDINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0           86.45           81.41            701          NaN
+1     BSE       C      1026078  NaN     FUTCUR                   601.0            GBPINR      GBPINR  GBPINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0          114.28          107.62            701          NaN
+2     BSE       C      1026079  NaN     FUTCUR                   602.0            EURINR      EURINR  EURINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0           96.55           90.92            701          NaN
+3     BSE       C      1026080  NaN     FUTCUR                   603.0            JPYINR      JPYINR  JPYINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0           59.77           56.28            701          NaN
+4     BSE       C      1026081  NaN     FUTCUR                   625.0            EURUSD      EURUSD  EURUSD AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.01           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0            1.15            1.08            701          NaN
+09:21:45  INFO   InstrumentMapper: INSTRUMENT top values = {'OPTSTK': 105835, 'OPTFUT': 35824, 'OPTCUR': 23872, 'EQUITY': 23663, 'OPTIDX': 19065, 'FUTSTK': 1282, 'FUTCUR': 290, 'INDEX': 190, 'FUTCOM': 168, 'FUTIDX': 37}
+09:21:45  INFO   InstrumentMapper: SYMBOL_NAME top values = {'SILVERM': 15026, 'GOLD': 11572, 'SILVER': 3623, 'BSXOPT': 3246, 'USDJPY': 2927, 'USDINR': 2589, 'JPYINR': 1761, 'GBPUSD': 1405, 'EURUSD': 1359, 'GBPINR': 1349, 'EURINR': 1343, 'GOLDM': 1264, 'CRUDEOIL': 1244, 'BITOPT': 1112, 'BKXOPT': 1048, 'NATURALGAS': 778, 'CRUDEOILM': 714, 'MCXBULLDEX': 633, 'COPPER': 611, 'NATGASMINI': 534}
+09:21:45  INFO   InstrumentMapper: UNDERLYING_SYMBOL top values = {'SILVERM': 15026, 'GOLD': 11572, 'USDINR': 4794, 'NIFTY': 4093, 'JPYINR': 3788, 'USDJPY': 3781, 'GBPINR': 3690, 'EURINR': 3688, 'SILVER': 3625, 'SENSEX': 3250, 'BANKNIFTY': 2380, 'GBPUSD': 2237, 'NIFTYNXT50': 2220, 'EURUSD': 2183, 'MIDCPNIFTY': 1670, 'GOLDM': 1264, 'CRUDEOIL': 1244, 'NIFTYFPI': 1121, 'FOCIT': 1116, 'FINNIFTY': 1102}
+09:21:45  INFO   InstrumentMapper: after SEGMENT filter = 125,582/210,226
+09:21:45  INFO   InstrumentMapper: after EXCH_ID filter = 85,591/125,582
+09:21:45  INFO   InstrumentMapper: after INSTRUMENT filter = 84,920/85,591
+09:21:45  INFO   InstrumentMapper: after UNDERLYING_SYMBOL filter = 4,089/84,920
+09:21:45  INFO   InstrumentMapper: after OPTION_TYPE filter = 4,089/4,089
+09:21:45  ERROR  InstrumentMapper: Dhan scrip master download FAILED: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.
+ - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package. — resolve_dhan_contract() will fail for unknown symbols
+09:21:45  INFO   mapper.load() ✅ Dhan scrip master loaded
+09:21:46  WARNING  get_current_expiry: resolved expiry 2026-10-19 is NOT a Tuesday (weekday=0). Check NSE holiday schedule.
+09:21:46  INFO   Auto-detected NIFTY expiry: 2026-10-19 (Monday)
+09:21:47  INFO   _EXPIRY_DATE_OBJ set to 2026-10-19 for live IV computation
+09:21:47  INFO   PAPER TRADING MODE — order_manager/risk_gate/syncer disabled. No real orders will be placed; trades are simulated and monitored against the smart-exit (SL / IV / OI / Supertrend / time-stop) chain only.
+09:21:47  INFO   Zerodha broker connection used for MARKET DATA ONLY  expiry=2026-10-19  dry_run=False  paper_mode=True
+09:21:48  WARNING  resolve_instruments: next_exp 2026-10-19 is NOT a Tuesday (weekday=0). Check NSE holiday schedule.
+09:21:48  INFO   resolve_instruments: spot from Zerodha kite.ltp = 22972
+09:21:48  INFO   resolve_instruments  spot=22972  ATM=22950  expiry=2026-10-19  (Monday)
+09:21:48  INFO     NIFTY-Oct2026-22950-CE              → ID=47159
+09:21:48  INFO     NIFTY-Oct2026-22950-PE              → ID=47160
+09:21:48  INFO     NIFTY-Oct2026-23000-CE              → ID=47161
+09:21:48  INFO     NIFTY-Oct2026-22900-PE              → ID=47158
+09:21:48  INFO   resolve_instruments SUCCESS  IDs={'nifty_spot': ('IDX_I', '13'), 'atm_call': ('NSE_FNO', '47159'), 'atm_put': ('NSE_FNO', '47160'), 'otm_call': ('NSE_FNO', '47161'), 'otm_put': ('NSE_FNO', '47158')}
+09:21:48  INFO   Warm-starting model buffer from recent dynamic-ATM history...
+09:21:48  INFO   live_warmstart[DYNAMIC]: fetching rolling ATM 2026-09-14 to 2026-10-16 ...
+09:22:01  INFO   live_warmstart[DYNAMIC] roll-check on 8,476 bars: ATM == round(S/50)*50 on 100.0%, ATM+1 == that+50 on 100.0%  |  distinct ATM strikes in window = 27 (1 => endpoint is PINNED, many => rolling)
+09:22:01  WARNING  fetch_historical_vix: HTTP 503 -- falling back to constant-fill
+09:22:01  WARNING  live_warmstart[DYNAMIC]: VIX fetch failed -- india_vix will be constant-filled for the ENTIRE warm-started history
+09:22:01  INFO   live_warmstart[DYNAMIC]: reconstructed 8,476 DYNAMIC-ATM rows (2026-09-15 09:15:00 to 2026-10-16 09:20:00)
+09:22:02  INFO   live_warmstart: replaying model.htf/model.pivot/model.rvol_hist state...
+09:22:02  INFO   live_warmstart: [primary] replayed 8000 bars into htf/pivot, 8000 bars into rvol_hist, 8000 bars into adx1m/price rank history
+09:22:02  INFO   live_warmstart: replayed 8000 bars into model.htf/model.pivot, 8000 bars into model.rvol_hist
+09:22:02  INFO   live_warmstart: COMPLETE -- buffer at 8000/8000, model state warm (htf, pivot, AND rvol_hist) for 1 model(s). Bot(s) can predict meaningfully from bar 1.
+09:22:02  INFO   Warm-start SUCCESS: buffer at 8000/8000 bars
+09:22:02  INFO   Entries blocked for the next 20 live bars (seam-artifact guard)
+09:22:02  INFO   RULE-PIN warmstart: fetching CALL histories 2026-09-14 to 2026-10-16 across 21 relative strikes
+09:23:50  INFO   RULE-PIN warmstart: reconstructed 7,964 CALL rows (2026-09-15 09:15:00 to 2026-10-16 09:21:00)
+09:23:50  INFO   [RULE-PIN] selected strike=22650 historical_rows=7964
+09:23:50  INFO   ChainGrid[DYNAMIC]: center=22950 half_width=14 legs=58 window_offsets=-10..10 chain columns=117
+09:23:50  INFO   ChainGrid.seed: seeded 58/58 legs from REST quote
+09:23:50  INFO   GRID coverage after seed: (42, 42)  subscription=59
+09:23:50  INFO   [RULE-PIN] strike=22650 security_id=47141
+09:23:50  INFO   Subscription built: [(0, '13', 15), (2, '47159', 21), (2, '47160', 21), (2, '47161', 21), (2, '47158', 21), (2, '47123', 21), (2, '47124', 21), (2, '47125', 21), (2, '47126', 21), (2, '47127', 21), (2, '47128', 21), (2, '47129', 21), (2, '47130', 21), (2, '47131', 21), (2, '47132', 21), (2, '47133', 21), (2, '47136', 21), (2, '47137', 21), (2, '47138', 21), (2, '47139', 21), (2, '47140', 21), (2, '47141', 21), (2, '47142', 21), (2, '47143', 21), (2, '47144', 21), (2, '47149', 21), (2, '47152', 21), (2, '47153', 21), (2, '47154', 21), (2, '47155', 21), (2, '47156', 21), (2, '47157', 21), (2, '47162', 21), (2, '47164', 21), (2, '47166', 21), (2, '47167', 21), (2, '47168', 21), (2, '47169', 21), (2, '47170', 21), (2, '47171', 21), (2, '47172', 21), (2, '47173', 21), (2, '47174', 21), (2, '47175', 21), (2, '47176', 21), (2, '47177', 21), (2, '47178', 21), (2, '47179', 21), (2, '47180', 21), (2, '47181', 21), (2, '47182', 21), (2, '47183', 21), (2, '47184', 21), (2, '47185', 21), (2, '47186', 21), (2, '47187', 21), (2, '47188', 21), (2, '47189', 21), (2, '47200', 21)]
+09:23:50  INFO   ============================================================
+09:23:50  INFO   Starting v14 Nifty50 Live Bot — Dhan MarketFeed
+09:23:50  INFO   India VIX     : 14.42
+09:23:50  INFO   eff_long             : 0.8500  (prob_long  >= this -> LONG)
+09:23:50  INFO   eff_short            : 0.8500  (prob_short >= this -> SHORT)
+09:23:50  INFO   persist_window       : 5 bars
+09:23:50  INFO   MINCONF=0.7500 -- NO-OP (model's lowest effective threshold 0.8100 is already >= MINCONF, so this rule-filter gate never rejects)
+09:23:50  INFO   ATM Call      : 47159  (features)
+09:23:50  INFO   ATM Put       : 47160   (features)
+09:23:50  INFO   OTM offset    : ±1×50 = ±50pts  (±500pt chain search)
+09:23:50  INFO   Expiry        : 2026-10-19
+09:23:50  INFO   Lot size      : 65  Max lots: 1
+09:23:50  INFO   SL method     : static 20 points below entry
+09:23:50  INFO   Exit system   : Smart 5-priority chain  no fixed TP
+09:23:50  INFO     1. Hard SL    barlow ≤ sl_price
+09:23:50  INFO     2. IV Z-Score z≥1.8  AND pnl≥1.5%
+09:23:50  INFO     3. OI Unwind  oichg≤-3.0%  AND pnl≥2.0%
+09:23:50  INFO     4. Supertrend period=10, mult=3.0  AND pnl≥4.0%
+09:23:50  INFO     5. Time stop  bars≥160  or EOD 15:30
+09:23:50  INFO   Momentum gate : score≥4/8 to enter
+09:23:50  INFO   MINCONF=0.75  MINADX=22  COOLDOWN=3  SL_REENTRY=5
+09:23:50  INFO   ============================================================
+09:23:50  INFO   Feed created  class=MarketFeed
+09:23:50  INFO   FEED has subscribe_symbols: True
+09:23:50  INFO   FEED has unsubscribe_symbols: True
+09:23:51  INFO   Feed connected — starting tick poll loop
+09:23:51  INFO   [DIAG] RAW TICK keys (call leg): ['type', 'exchange_segment', 'security_id', 'LTP', 'LTQ', 'LTT', 'avg_price', 'volume', 'total_sell_quantity', 'total_buy_quantity', 'OI', 'oi_day_high', 'oi_day_low', 'open', 'close', 'high', 'low', 'depth']
+09:23:51  INFO   [DIAG] RAW TICK full payload (call leg): {'type': 'Full Data', 'exchange_segment': 2, 'security_id': 47159, 'LTP': '126.10', 'LTQ': 65, 'LTT': '09:23:48', 'avg_price': '130.17', 'volume': 14409525, 'total_sell_quantity': 459355, 'total_buy_quantity': 4843020, 'OI': 5377710, 'oi_day_high': 5377710, 'oi_day_low': 2297620, 'open': '127.65', 'close': '112.25', 'high': '182.25', 'low': '112.25', 'depth': [{'bid_quantity': 195, 'ask_quantity': 1690, 'bid_orders': 3, 'ask_orders': 10, 'bid_price': '125.70', 'ask_price': '126.05'}, {'bid_quantity': 2145, 'ask_quantity': 780, 'bid_orders': 11, 'ask_orders': 6, 'bid_price': '125.65', 'ask_price': '126.10'}, {'bid_quantity': 1430, 'ask_quantity': 1300, 'bid_orders': 10, 'ask_orders': 6, 'bid_price': '125.60', 'ask_price': '126.15'}, {'bid_quantity': 2080, 'ask_quantity': 1430, 'bid_orders': 10, 'ask_orders': 7, 'bid_price': '125.55', 'ask_price': '126.20'}, {'bid_quantity': 1820, 'ask_quantity': 910, 'bid_orders': 10, 'ask_orders': 5, 'bid_price': '125.50', 'ask_price': '126.25'}]}
+09:24:00  INFO   InstrumentMapper: loaded from cache expiry=2026-10-19
+09:24:00  INFO   InstrumentMapper: downloading Dhan detailed scrip master CSV...
+09:24:02  INFO   InstrumentMapper: Dhan raw rows = 210,226
+09:24:02  INFO   InstrumentMapper: Dhan columns = ['EXCH_ID', 'SEGMENT', 'SECURITY_ID', 'ISIN', 'INSTRUMENT', 'UNDERLYING_SECURITY_ID', 'UNDERLYING_SYMBOL', 'SYMBOL_NAME', 'DISPLAY_NAME', 'INSTRUMENT_TYPE', 'SERIES', 'LOT_SIZE', 'SM_EXPIRY_DATE', 'STRIKE_PRICE', 'OPTION_TYPE', 'TICK_SIZE', 'EXPIRY_FLAG', 'BRACKET_FLAG', 'COVER_FLAG', 'ASM_GSM_FLAG', 'ASM_GSM_CATEGORY', 'BUY_SELL_INDICATOR', 'BUY_CO_MIN_MARGIN_PER', 'BUY_CO_SL_RANGE_MAX_PERC', 'BUY_CO_SL_RANGE_MIN_PERC', 'BUY_BO_MIN_MARGIN_PER', 'BUY_BO_PROFIT_RANGE_MAX_PERC', 'BUY_BO_PROFIT_RANGE_MIN_PERC', 'MTF_LEVERAGE', 'SM_UPPER_LIMIT', 'SM_LOWER_LIMIT', 'SM_FREEZE_QTY', 'Unnamed: 32']
+09:24:02  INFO   InstrumentMapper: Dhan sample rows:
+  EXCH_ID SEGMENT  SECURITY_ID ISIN INSTRUMENT  UNDERLYING_SECURITY_ID UNDERLYING_SYMBOL SYMBOL_NAME    DISPLAY_NAME INSTRUMENT_TYPE SERIES  LOT_SIZE SM_EXPIRY_DATE  STRIKE_PRICE OPTION_TYPE  TICK_SIZE EXPIRY_FLAG BRACKET_FLAG COVER_FLAG ASM_GSM_FLAG ASM_GSM_CATEGORY BUY_SELL_INDICATOR  BUY_CO_MIN_MARGIN_PER  BUY_CO_SL_RANGE_MAX_PERC  BUY_CO_SL_RANGE_MIN_PERC  BUY_BO_MIN_MARGIN_PER  BUY_BO_PROFIT_RANGE_MAX_PERC  BUY_BO_PROFIT_RANGE_MIN_PERC  MTF_LEVERAGE  SM_UPPER_LIMIT  SM_LOWER_LIMIT  SM_FREEZE_QTY  Unnamed: 32
+0     BSE       C      1026077  NaN     FUTCUR                   600.0            USDINR      USDINR  USDINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0           86.45           81.41            701          NaN
+1     BSE       C      1026078  NaN     FUTCUR                   601.0            GBPINR      GBPINR  GBPINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0          114.28          107.62            701          NaN
+2     BSE       C      1026079  NaN     FUTCUR                   602.0            EURINR      EURINR  EURINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0           96.55           90.92            701          NaN
+3     BSE       C      1026080  NaN     FUTCUR                   603.0            JPYINR      JPYINR  JPYINR AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.25           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0           59.77           56.28            701          NaN
+4     BSE       C      1026081  NaN     FUTCUR                   625.0            EURUSD      EURUSD  EURUSD AUG FUT          FUTCUR    NaN       1.0     2024-08-28         -0.01          XX       0.01           M            N          N            N              NaN                  A                      0                         0                       0.0                      0                             0                           0.0           0.0            1.15            1.08            701          NaN
+09:24:02  INFO   InstrumentMapper: INSTRUMENT top values = {'OPTSTK': 105835, 'OPTFUT': 35824, 'OPTCUR': 23872, 'EQUITY': 23663, 'OPTIDX': 19065, 'FUTSTK': 1282, 'FUTCUR': 290, 'INDEX': 190, 'FUTCOM': 168, 'FUTIDX': 37}
+09:24:02  INFO   InstrumentMapper: SYMBOL_NAME top values = {'SILVERM': 15026, 'GOLD': 11572, 'SILVER': 3623, 'BSXOPT': 3246, 'USDJPY': 2927, 'USDINR': 2589, 'JPYINR': 1761, 'GBPUSD': 1405, 'EURUSD': 1359, 'GBPINR': 1349, 'EURINR': 1343, 'GOLDM': 1264, 'CRUDEOIL': 1244, 'BITOPT': 1112, 'BKXOPT': 1048, 'NATURALGAS': 778, 'CRUDEOILM': 714, 'MCXBULLDEX': 633, 'COPPER': 611, 'NATGASMINI': 534}
+09:24:02  INFO   InstrumentMapper: UNDERLYING_SYMBOL top values = {'SILVERM': 15026, 'GOLD': 11572, 'USDINR': 4794, 'NIFTY': 4093, 'JPYINR': 3788, 'USDJPY': 3781, 'GBPINR': 3690, 'EURINR': 3688, 'SILVER': 3625, 'SENSEX': 3250, 'BANKNIFTY': 2380, 'GBPUSD': 2237, 'NIFTYNXT50': 2220, 'EURUSD': 2183, 'MIDCPNIFTY': 1670, 'GOLDM': 1264, 'CRUDEOIL': 1244, 'NIFTYFPI': 1121, 'FOCIT': 1116, 'FINNIFTY': 1102}
+09:24:02  INFO   InstrumentMapper: after SEGMENT filter = 125,582/210,226
+09:24:02  INFO   InstrumentMapper: after EXCH_ID filter = 85,591/125,582
+09:24:03  INFO   InstrumentMapper: after INSTRUMENT filter = 84,920/85,591
+09:24:03  INFO   InstrumentMapper: after UNDERLYING_SYMBOL filter = 4,089/84,920
+09:24:03  INFO   InstrumentMapper: after OPTION_TYPE filter = 4,089/4,089
+09:24:03  ERROR  InstrumentMapper: Dhan scrip master download FAILED: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.
+ - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package. — resolve_dhan_contract() will fail for unknown symbols
+09:24:03  INFO   process_tick: mapper reloaded for process_tick scope (late init)
+09:24:03  INFO   BAR    1 2026-10-16 09:23:00 call=  101.15 put=  142.25 spot= 22985.35 buf=8000/8000 vix=14.4 FLAT
+09:24:03  INFO   [SERVE-CHECK] ✅ ATM non-volume raw cols populated
+09:24:03  INFO   [SERVE-CHECK] ✅ far-strike grid populated; 117 raw cols expected, 2 zero (volume-only zeros are normal for illiquid strikes)
+09:24:03  INFO   [WINDOW-CHECK] rolling_rank window_used=7500 bars (target FULL_WINDOW=7500; was hardcoded 100 before this fix) sample_price_position_rank=0.3640 vix_ma20=14.419999999999996
+09:24:03  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:25:00  INFO   BAR    2 2026-10-16 09:24:00 call=  101.00 put=  142.80 spot= 22986.15 buf=8000/8000 vix=14.4 FLAT
+09:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:26:00  INFO   BAR    3 2026-10-16 09:25:00 call=   96.40 put=  144.10 spot= 22977.15 buf=8000/8000 vix=14.4 FLAT
+09:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:27:00  INFO   ATM roll 23000 -> 22950  spot=22959.45
+09:27:00  INFO   BAR    4 2026-10-16 09:26:00 call=  110.55 put=  127.25 spot= 22959.45 buf=8000/8000 vix=14.4 FLAT
+09:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:28:00  INFO   BAR    5 2026-10-16 09:27:00 call=  106.20 put=  130.35 spot= 22951.15 buf=8000/8000 vix=14.4 FLAT
+09:28:00  INFO   ENTRY BLOCKED post-warmstart cooldown 5/20 live bars
+09:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:29:00  INFO   BAR    6 2026-10-16 09:28:00 call=  102.00 put=  135.20 spot= 22949.80 buf=8000/8000 vix=14.4 FLAT
+09:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:30:00  INFO   BAR    7 2026-10-16 09:29:00 call=  104.70 put=  132.40 spot= 22952.20 buf=8000/8000 vix=14.4 FLAT
+09:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:31:00  INFO   BAR    8 2026-10-16 09:30:00 call=  105.75 put=  129.40 spot= 22957.40 buf=8000/8000 vix=14.4 FLAT
+09:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:32:00  INFO   BAR    9 2026-10-16 09:31:00 call=   96.40 put=  139.50 spot= 22937.85 buf=8000/8000 vix=14.4 FLAT
+09:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:33:00  INFO   BAR   10 2026-10-16 09:32:00 call=   95.85 put=  140.95 spot= 22936.10 buf=8000/8000 vix=14.4 FLAT
+09:33:00  INFO     [GRID] legs with live price: 42/42
+09:33:00  INFO   ENTRY BLOCKED post-warmstart cooldown 10/20 live bars
+09:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:34:00  INFO   BAR   11 2026-10-16 09:33:00 call=   94.00 put=  142.05 spot= 22934.10 buf=8000/8000 vix=14.4 FLAT
+09:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:35:00  INFO   BAR   12 2026-10-16 09:34:00 call=   91.85 put=  142.70 spot= 22932.35 buf=8000/8000 vix=14.4 FLAT
+09:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:36:00  INFO   BAR   13 2026-10-16 09:35:00 call=   91.20 put=  144.50 spot= 22929.05 buf=8000/8000 vix=14.4 FLAT
+09:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:37:00  INFO   ATM roll 22950 -> 22900  spot=22919.50
+09:37:00  INFO   BAR   14 2026-10-16 09:36:00 call=  107.95 put=  123.50 spot= 22919.50 buf=8000/8000 vix=14.4 FLAT
+09:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:38:00  INFO   ATM roll 22900 -> 22950  spot=22948.35
+09:38:00  INFO   BAR   15 2026-10-16 09:37:00 call=   97.10 put=  136.70 spot= 22948.35 buf=8000/8000 vix=14.4 FLAT
+09:38:00  INFO   ENTRY BLOCKED post-warmstart cooldown 15/20 live bars
+09:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:39:00  INFO   BAR   16 2026-10-16 09:38:00 call=   92.10 put=  142.65 spot= 22938.30 buf=8000/8000 vix=14.4 FLAT
+09:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:40:00  INFO   BAR   17 2026-10-16 09:39:00 call=   91.80 put=  143.35 spot= 22937.60 buf=8000/8000 vix=14.4 FLAT
+09:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:41:00  INFO   BAR   18 2026-10-16 09:40:00 call=  106.80 put=  126.85 spot= 22963.15 buf=8000/8000 vix=14.4 FLAT
+09:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:42:00  INFO   BAR   19 2026-10-16 09:41:00 call=  100.50 put=  132.65 spot= 22955.35 buf=8000/8000 vix=14.4 FLAT
+09:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:43:00  INFO   BAR   20 2026-10-16 09:42:00 call=  105.30 put=  127.60 spot= 22964.85 buf=8000/8000 vix=14.4 FLAT
+09:43:00  INFO     [GRID] legs with live price: 42/42
+09:43:00  INFO     [MODEL] pl=0.081 ps=0.919 sig=SHORT adx=4.9 rvol=0.76
+09:43:00  INFO   [RULE-PIN] strike=22650 rows=7984 rsi5m=30.224017624508747 macdh5m=-4.698410995878836
+09:43:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.919 reason=openrush
+09:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:44:00  INFO   BAR   21 2026-10-16 09:43:00 call=  109.95 put=  120.60 spot= 22974.70 buf=8000/8000 vix=14.4 FLAT
+09:44:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.935 reason=openrush
+09:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:45:00  INFO   ATM roll 22950 -> 23000  spot=22975.80
+09:45:00  INFO   BAR   22 2026-10-16 09:44:00 call=   85.65 put=  150.65 spot= 22975.80 buf=8000/8000 vix=14.4 FLAT
+09:45:00  INFO   SIGNAL FILTERED raw=LONG conf=0.958 reason=openrush
+09:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:46:00  INFO   ATM roll 23000 -> 22950  spot=22962.05
+09:46:00  INFO   BAR   23 2026-10-16 09:45:00 call=  103.00 put=  128.40 spot= 22962.05 buf=8000/8000 vix=14.4 FLAT
+09:46:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.878 reason=lowadx6.0<22
+09:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:47:00  INFO   BAR   24 2026-10-16 09:46:00 call=   97.75 put=  131.30 spot= 22953.10 buf=8000/8000 vix=14.4 FLAT
+09:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:48:00  INFO   BAR   25 2026-10-16 09:47:00 call=   93.85 put=  133.80 spot= 22945.25 buf=8000/8000 vix=14.4 FLAT
+09:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:49:00  INFO   BAR   26 2026-10-16 09:48:00 call=   99.05 put=  127.65 spot= 22953.80 buf=8000/8000 vix=14.4 FLAT
+09:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:50:00  INFO   BAR   27 2026-10-16 09:49:00 call=  103.10 put=  124.55 spot= 22963.75 buf=8000/8000 vix=14.4 FLAT
+09:50:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.923 reason=lowadx9.2<22
+09:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:51:00  INFO   BAR   28 2026-10-16 09:50:00 call=  105.00 put=  122.70 spot= 22966.45 buf=8000/8000 vix=14.4 FLAT
+09:51:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.897 reason=lowrvol0.47<0.8
+09:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:52:00  INFO   BAR   29 2026-10-16 09:51:00 call=  104.25 put=  121.45 spot= 22967.35 buf=8000/8000 vix=14.4 FLAT
+09:52:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.935 reason=lowadx13.1<22
+09:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:53:00  INFO   BAR   30 2026-10-16 09:52:00 call=  100.30 put=  125.10 spot= 22959.00 buf=8000/8000 vix=14.4 FLAT
+09:53:00  INFO     [GRID] legs with live price: 42/42
+09:53:00  INFO     [MODEL] pl=0.114 ps=0.886 sig=SHORT adx=10.6 rvol=0.52
+09:53:00  INFO   [RULE-PIN] strike=22650 rows=7994 rsi5m=36.7458279812937 macdh5m=-2.6287499170414694
+09:53:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.886 reason=lowadx10.6<22
+09:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:54:00  INFO   ATM roll 22950 -> 23000  spot=22975.45
+09:54:00  INFO   BAR   31 2026-10-16 09:53:00 call=   86.30 put=  140.55 spot= 22975.45 buf=8000/8000 vix=14.4 FLAT
+09:54:00  INFO   MOMENTUM GATE BLOCKED signal=LONG score=3<4 confok=True adxdirok=False trend=False consec=1 spread=True clean=False atrok=False strong=True
+09:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:55:00  INFO   BAR   32 2026-10-16 09:54:00 call=   89.80 put=  137.50 spot= 22984.00 buf=8000/8000 vix=14.4 FLAT
+09:55:00  INFO   SIGNAL FILTERED raw=LONG conf=0.914 reason=lowadx9.0<22
+09:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:56:00  INFO   BAR   33 2026-10-16 09:55:00 call=   94.95 put=  128.80 spot= 22993.95 buf=8000/8000 vix=14.4 FLAT
+09:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:57:00  INFO   BAR   34 2026-10-16 09:56:00 call=   92.10 put=  134.15 spot= 22990.25 buf=8000/8000 vix=14.4 FLAT
+09:57:00  INFO   SIGNAL FILTERED raw=LONG conf=0.929 reason=lowadx2.5<22
+09:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:58:00  INFO   BAR   35 2026-10-16 09:57:00 call=  104.95 put=  116.15 spot= 23011.60 buf=8000/8000 vix=14.4 FLAT
+09:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+09:59:00  INFO   BAR   36 2026-10-16 09:58:00 call=  104.65 put=  115.95 spot= 23015.25 buf=8000/8000 vix=14.4 FLAT
+09:59:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.914 reason=5mbulltrend
+09:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:00:00  INFO   ATM roll 23000 -> 23050  spot=23026.55
+10:00:00  INFO   BAR   37 2026-10-16 09:59:00 call=   85.80 put=  137.90 spot= 23026.55 buf=8000/8000 vix=14.4 FLAT
+10:00:00  INFO   SIGNAL FILTERED raw=LONG conf=0.961 reason=lowadx6.6<22
+10:00:00  INFO   ChainGrid: re-centered 22950 -> 23050  +4 legs -4 legs
+10:00:00  INFO   ChainGrid.seed: seeded 4/4 legs from REST quote
+10:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:01:00  INFO   BAR   38 2026-10-16 10:00:00 call=   88.85 put=  132.40 spot= 23032.85 buf=8000/8000 vix=14.4 FLAT
+10:01:00  INFO   ENTRY-GATE adx_1m=27.00 pdi=36.5 ndi=63.5 adx_src=call_close nbars=8000 spot_chg_5bar=+0.17% revguard=on
+10:01:00  INFO   ENTRY LONG     68.90 symbol=PAPER_LONG_23100CE PL=0.965 PS=0.035 conf=0.965 SL=48.90 momscore=5 ATR=7.18 OTM=1 ATM=23050 strike=23100 cost=Rs4478 dist=67pts OI=0 filter=OK
+10:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:02:00  INFO   BAR   39 2026-10-16 10:01:00 call=   94.20 put=  127.60 spot= 23040.95 buf=8000/8000 vix=14.4 IN LONG entry=68.90 bars=0
+10:02:00  INFO     [EXIT-CHECK] signal=LONG bar_held=1 close=73.20 entry=68.90 pnl=6.24% sl=48.90 ivz=-1.42 oichg=1.64 st_dir=1 skip_hard_sl=False
+10:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:03:00  INFO   BAR   40 2026-10-16 10:02:00 call=   96.20 put=  124.70 spot= 23046.10 buf=8000/8000 vix=14.4 IN LONG entry=68.90 bars=1
+10:03:00  INFO     [GRID] legs with live price: 42/42
+10:03:00  INFO     [EXIT-CHECK] signal=LONG bar_held=2 close=74.90 entry=68.90 pnl=8.71% sl=48.90 ivz=-1.56 oichg=-0.75 st_dir=1 skip_hard_sl=False
+10:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:04:00  INFO   BAR   41 2026-10-16 10:03:00 call=   96.70 put=  124.40 spot= 23046.65 buf=8000/8000 vix=14.4 IN LONG entry=68.90 bars=2
+10:04:00  INFO     [EXIT-CHECK] signal=LONG bar_held=3 close=75.15 entry=68.90 pnl=9.07% sl=48.90 ivz=-1.38 oichg=-6.05 st_dir=1 skip_hard_sl=False
+10:04:00  INFO   EXIT-GATE reason=OI_UNWIND adx_1m=9.45 pdi=45.7 ndi=54.3 adx_src=call_close nbars=8000 spot_chg_5bar=+0.14%
+10:04:00  INFO   EXIT LONG     75.15 entry=   68.90 pnl=9.071% OI_UNWIND bars_held=3 sl=48.90 ivz=-1.38 oichg=-6.05 sl_method=STATIC_20PTS
+10:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:05:00  INFO   BAR   42 2026-10-16 10:04:00 call=  102.50 put=  119.15 spot= 23052.55 buf=8000/8000 vix=14.4 COOLDOWN=2
+10:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:06:00  INFO   BAR   43 2026-10-16 10:05:00 call=  107.60 put=  115.15 spot= 23059.60 buf=8000/8000 vix=14.4 COOLDOWN=1
+10:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:07:00  INFO   BAR   44 2026-10-16 10:06:00 call=  108.00 put=  114.30 spot= 23068.35 buf=8000/8000 vix=14.4 FLAT
+10:07:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.941 reason=lowadx17.5<22
+10:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:08:00  INFO   BAR   45 2026-10-16 10:07:00 call=  107.15 put=  115.50 spot= 23067.65 buf=8000/8000 vix=14.4 FLAT
+10:08:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.932 reason=lowadx11.7<22
+10:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:09:00  INFO   BAR   46 2026-10-16 10:08:00 call=  109.00 put=  113.40 spot= 23070.05 buf=8000/8000 vix=14.4 FLAT
+10:09:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.944 reason=lowrvol0.50<0.8
+10:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:10:00  INFO   BAR   47 2026-10-16 10:09:00 call=  102.65 put=  120.70 spot= 23062.75 buf=8000/8000 vix=14.4 FLAT
+10:10:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.921 reason=lowadx21.5<22
+10:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:11:00  INFO   BAR   48 2026-10-16 10:10:00 call=  104.65 put=  117.90 spot= 23062.30 buf=8000/8000 vix=14.4 FLAT
+10:11:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.873 reason=lowadx2.6<22
+10:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:12:00  INFO   BAR   49 2026-10-16 10:11:00 call=  107.45 put=  115.00 spot= 23069.10 buf=8000/8000 vix=14.4 FLAT
+10:12:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.940 reason=lowrvol0.61<0.8
+10:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:13:00  INFO   BAR   50 2026-10-16 10:12:00 call=  111.55 put=  110.50 spot= 23073.60 buf=8000/8000 vix=14.4 FLAT
+10:13:00  INFO     [GRID] legs with live price: 42/42
+10:13:00  INFO     [MODEL] pl=0.057 ps=0.943 sig=SHORT adx=32.4 rvol=0.79
+10:13:00  INFO   [RULE-PIN] strike=22650 rows=8000 rsi5m=68.0875799226769 macdh5m=13.367940248988969
+10:13:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.943 reason=lowrvol0.79<0.8
+10:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:14:00  INFO   ATM roll 23050 -> 23100  spot=23075.15
+10:14:00  INFO   BAR   51 2026-10-16 10:13:00 call=   86.90 put=  136.00 spot= 23075.15 buf=8000/8000 vix=14.4 FLAT
+10:14:00  INFO   ENTRY-GATE adx_1m=56.62 pdi=21.7 ndi=78.3 adx_src=call_close nbars=8000 spot_chg_5bar=+0.02% revguard=on
+10:14:00  INFO   ENTRY LONG     67.00 symbol=PAPER_LONG_23150CE PL=0.919 PS=0.081 conf=0.919 SL=47.00 momscore=4 ATR=5.17 OTM=1 ATM=23100 strike=23150 cost=Rs4355 dist=75pts OI=0 filter=OK
+10:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:15:00  INFO   BAR   52 2026-10-16 10:14:00 call=   98.70 put=  119.20 spot= 23093.35 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=0
+10:15:00  INFO     [EXIT-CHECK] signal=LONG bar_held=1 close=76.75 entry=67.00 pnl=14.55% sl=47.00 ivz=0.62 oichg=1.69 st_dir=1 skip_hard_sl=False
+10:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:16:00  INFO   BAR   53 2026-10-16 10:15:00 call=   99.50 put=  119.50 spot= 23106.35 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=1
+10:16:00  INFO     [EXIT-CHECK] signal=LONG bar_held=2 close=77.55 entry=67.00 pnl=15.75% sl=47.00 ivz=-2.52 oichg=0.45 st_dir=1 skip_hard_sl=False
+10:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:17:00  INFO   BAR   54 2026-10-16 10:16:00 call=  102.40 put=  118.50 spot= 23106.65 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=2
+10:17:00  INFO     [EXIT-CHECK] signal=LONG bar_held=3 close=78.80 entry=67.00 pnl=17.61% sl=47.00 ivz=-1.58 oichg=8.07 st_dir=1 skip_hard_sl=False
+10:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:18:00  INFO   ATM roll 23100 -> 23150  spot=23126.40
+10:18:00  INFO   BAR   55 2026-10-16 10:17:00 call=   91.80 put=  130.90 spot= 23126.40 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=3
+10:18:00  INFO     [EXIT-CHECK] signal=LONG bar_held=4 close=91.80 entry=67.00 pnl=37.01% sl=47.00 ivz=0.92 oichg=-0.66 st_dir=1 skip_hard_sl=False
+10:18:00  INFO   ChainGrid: re-centered 23050 -> 23150  +4 legs -4 legs
+10:18:00  INFO   ChainGrid.seed: seeded 4/4 legs from REST quote
+10:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:19:00  INFO   BAR   56 2026-10-16 10:18:00 call=   97.80 put=  127.35 spot= 23136.65 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=4
+10:19:00  INFO     [EXIT-CHECK] signal=LONG bar_held=5 close=97.80 entry=67.00 pnl=45.97% sl=47.00 ivz=1.44 oichg=3.48 st_dir=1 skip_hard_sl=False
+10:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:20:00  INFO   BAR   57 2026-10-16 10:19:00 call=  106.35 put=  123.15 spot= 23142.40 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=5
+10:20:00  INFO     [EXIT-CHECK] signal=LONG bar_held=6 close=106.35 entry=67.00 pnl=58.73% sl=47.00 ivz=3.23 oichg=3.56 st_dir=1 skip_hard_sl=False
+10:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:21:00  INFO   BAR   58 2026-10-16 10:20:00 call=  100.50 put=  127.05 spot= 23134.45 buf=8000/8000 vix=14.4 IN LONG entry=67.00 bars=6
+10:21:00  INFO     [EXIT-CHECK] signal=LONG bar_held=7 close=100.50 entry=67.00 pnl=50.00% sl=47.00 ivz=2.04 oichg=-1.21 st_dir=1 skip_hard_sl=False
+10:21:00  INFO   EXIT-GATE reason=IV_ZSCORE adx_1m=11.54 pdi=45.8 ndi=54.2 adx_src=call_close nbars=8000 spot_chg_5bar=+0.12%
+10:21:00  INFO   EXIT LONG    100.50 entry=   67.00 pnl=50.000% IV_ZSCORE bars_held=7 sl=47.00 ivz=2.04 oichg=-1.21 sl_method=STATIC_20PTS
+10:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:22:00  INFO   BAR   59 2026-10-16 10:21:00 call=   99.70 put=  126.85 spot= 23132.60 buf=8000/8000 vix=14.4 COOLDOWN=2
+10:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:23:00  INFO   ATM roll 23150 -> 23100  spot=23122.35
+10:23:00  INFO   BAR   60 2026-10-16 10:22:00 call=  116.20 put=  106.75 spot= 23122.35 buf=8000/8000 vix=14.4 COOLDOWN=1
+10:23:00  INFO     [GRID] legs with live price: 42/42
+10:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:24:00  INFO   ATM roll 23100 -> 23150  spot=23133.70
+10:24:00  INFO   BAR   61 2026-10-16 10:23:00 call=   99.35 put=  124.25 spot= 23133.70 buf=8000/8000 vix=14.4 FLAT
+10:24:00  INFO   SIGNAL FILTERED raw=LONG conf=0.945 reason=lowadx14.7<22
+10:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:25:00  INFO   BAR   62 2026-10-16 10:24:00 call=   99.65 put=  125.10 spot= 23134.70 buf=8000/8000 vix=14.4 FLAT
+10:25:00  INFO   SIGNAL FILTERED raw=LONG conf=0.959 reason=lowadx1.6<22
+10:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:26:00  INFO   BAR   63 2026-10-16 10:25:00 call=   95.75 put=  128.45 spot= 23130.80 buf=8000/8000 vix=14.4 FLAT
+10:26:00  INFO   SIGNAL FILTERED raw=LONG conf=0.970 reason=lowadx7.7<22
+10:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:27:00  INFO   BAR   64 2026-10-16 10:26:00 call=   98.55 put=  126.20 spot= 23134.10 buf=8000/8000 vix=14.4 FLAT
+10:27:00  INFO   SIGNAL FILTERED raw=LONG conf=0.975 reason=lowadx1.1<22
+10:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:28:00  INFO   BAR   65 2026-10-16 10:27:00 call=  100.80 put=  123.75 spot= 23138.05 buf=8000/8000 vix=14.4 FLAT
+10:28:00  INFO   SIGNAL FILTERED raw=LONG conf=0.943 reason=lowrvol0.48<0.8
+10:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:29:00  INFO   BAR   66 2026-10-16 10:28:00 call=  101.30 put=  122.30 spot= 23145.10 buf=8000/8000 vix=14.4 FLAT
+10:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:30:00  INFO   BAR   67 2026-10-16 10:29:00 call=  100.40 put=  124.20 spot= 23139.80 buf=8000/8000 vix=14.4 FLAT
+10:30:00  INFO   SIGNAL FILTERED raw=LONG conf=0.920 reason=lowadx2.4<22
+10:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:31:00  INFO   BAR   68 2026-10-16 10:30:00 call=  100.80 put=  124.05 spot= 23140.45 buf=8000/8000 vix=14.4 FLAT
+10:31:00  INFO   SIGNAL FILTERED raw=LONG conf=0.899 reason=lowadx10.5<22
+10:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:32:00  INFO   BAR   69 2026-10-16 10:31:00 call=  102.10 put=  121.20 spot= 23145.45 buf=8000/8000 vix=14.4 FLAT
+10:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:33:00  INFO   BAR   70 2026-10-16 10:32:00 call=  100.10 put=  121.55 spot= 23143.80 buf=8000/8000 vix=14.4 FLAT
+10:33:00  INFO     [GRID] legs with live price: 42/42
+10:33:00  INFO     [MODEL] pl=0.843 ps=0.157 sig=NONE adx=21.9 rvol=0.46
+10:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:34:00  INFO   BAR   71 2026-10-16 10:33:00 call=   99.15 put=  122.50 spot= 23143.25 buf=8000/8000 vix=14.4 FLAT
+10:34:00  INFO   SIGNAL FILTERED raw=LONG conf=0.927 reason=lowrvol0.36<0.8
+10:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:35:00  INFO   BAR   72 2026-10-16 10:34:00 call=  100.20 put=  121.85 spot= 23143.25 buf=8000/8000 vix=14.4 FLAT
+10:35:00  INFO   SIGNAL FILTERED raw=LONG conf=0.923 reason=lowrvol0.31<0.8
+10:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:36:00  INFO   BAR   73 2026-10-16 10:35:00 call=   98.70 put=  123.95 spot= 23143.55 buf=8000/8000 vix=14.4 FLAT
+10:36:00  INFO   SIGNAL FILTERED raw=LONG conf=0.913 reason=lowadx17.0<22
+10:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:37:00  INFO   BAR   74 2026-10-16 10:36:00 call=   98.95 put=  121.55 spot= 23146.45 buf=8000/8000 vix=14.4 FLAT
+10:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:38:00  INFO   BAR   75 2026-10-16 10:37:00 call=   95.15 put=  127.55 spot= 23135.30 buf=8000/8000 vix=14.4 FLAT
+10:38:00  INFO   ENTRY-GATE adx_1m=78.81 pdi=10.6 ndi=89.4 adx_src=call_close nbars=8000 spot_chg_5bar=-0.04% revguard=on
+10:38:00  INFO   ENTRY LONG     74.00 symbol=PAPER_LONG_23200CE PL=0.971 PS=0.029 conf=0.971 SL=54.00 momscore=6 ATR=3.25 OTM=1 ATM=23150 strike=23200 cost=Rs4810 dist=65pts OI=0 filter=OK
+10:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:39:00  INFO   ATM roll 23150 -> 23100  spot=23122.30
+10:39:00  INFO   BAR   76 2026-10-16 10:38:00 call=  113.00 put=  109.00 spot= 23122.30 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=0
+10:39:00  INFO     [EXIT-CHECK] signal=LONG bar_held=1 close=70.00 entry=74.00 pnl=-5.41% sl=54.00 ivz=-0.51 oichg=-3.61 st_dir=1 skip_hard_sl=False
+10:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:40:00  INFO   ATM roll 23100 -> 23150  spot=23131.45
+10:40:00  INFO   BAR   77 2026-10-16 10:39:00 call=   92.05 put=  129.75 spot= 23131.45 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=1
+10:40:00  INFO     [EXIT-CHECK] signal=LONG bar_held=2 close=72.00 entry=74.00 pnl=-2.70% sl=54.00 ivz=-1.31 oichg=0.16 st_dir=1 skip_hard_sl=False
+10:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:41:00  INFO   BAR   78 2026-10-16 10:40:00 call=   95.00 put=  127.95 spot= 23137.40 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=2
+10:41:00  INFO     [EXIT-CHECK] signal=LONG bar_held=3 close=73.90 entry=74.00 pnl=-0.14% sl=54.00 ivz=-1.46 oichg=1.14 st_dir=1 skip_hard_sl=False
+10:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:42:00  INFO   ATM roll 23150 -> 23100  spot=23122.95
+10:42:00  INFO   BAR   79 2026-10-16 10:41:00 call=  112.10 put=  109.35 spot= 23122.95 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=3
+10:42:00  INFO     [EXIT-CHECK] signal=LONG bar_held=4 close=68.85 entry=74.00 pnl=-6.96% sl=54.00 ivz=-0.91 oichg=1.85 st_dir=1 skip_hard_sl=False
+10:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:43:00  INFO   BAR   80 2026-10-16 10:42:00 call=  109.75 put=  112.85 spot= 23114.15 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=4
+10:43:00  INFO     [GRID] legs with live price: 42/42
+10:43:00  INFO     [EXIT-CHECK] signal=LONG bar_held=5 close=66.55 entry=74.00 pnl=-10.07% sl=54.00 ivz=-0.15 oichg=-1.13 st_dir=1 skip_hard_sl=False
+10:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:44:00  INFO   BAR   81 2026-10-16 10:43:00 call=  104.75 put=  116.95 spot= 23106.30 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=5
+10:44:00  INFO     [EXIT-CHECK] signal=LONG bar_held=6 close=62.85 entry=74.00 pnl=-15.07% sl=54.00 ivz=-0.51 oichg=-2.34 st_dir=-1 skip_hard_sl=False
+10:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:45:00  INFO   BAR   82 2026-10-16 10:44:00 call=  101.60 put=  121.75 spot= 23101.50 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=6
+10:45:00  INFO     [EXIT-CHECK] signal=LONG bar_held=7 close=60.30 entry=74.00 pnl=-18.51% sl=54.00 ivz=-0.97 oichg=-0.15 st_dir=-1 skip_hard_sl=False
+10:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:46:00  INFO   BAR   83 2026-10-16 10:45:00 call=  105.30 put=  116.50 spot= 23109.00 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=7
+10:46:00  INFO     [EXIT-CHECK] signal=LONG bar_held=8 close=63.20 entry=74.00 pnl=-14.59% sl=54.00 ivz=-0.79 oichg=0.82 st_dir=-1 skip_hard_sl=False
+10:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:47:00  INFO   BAR   84 2026-10-16 10:46:00 call=  100.50 put=  121.25 spot= 23098.75 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=8
+10:47:00  INFO     [EXIT-CHECK] signal=LONG bar_held=9 close=60.15 entry=74.00 pnl=-18.72% sl=54.00 ivz=-0.13 oichg=0.53 st_dir=-1 skip_hard_sl=False
+10:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:48:00  INFO   BAR   85 2026-10-16 10:47:00 call=   94.20 put=  128.20 spot= 23085.95 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=9
+10:48:00  INFO     [EXIT-CHECK] signal=LONG bar_held=10 close=55.80 entry=74.00 pnl=-24.59% sl=54.00 ivz=0.17 oichg=-1.03 st_dir=-1 skip_hard_sl=False
+10:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:49:00  INFO   BAR   86 2026-10-16 10:48:00 call=   98.00 put=  124.10 spot= 23091.75 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=10
+10:49:00  INFO     [EXIT-CHECK] signal=LONG bar_held=11 close=58.05 entry=74.00 pnl=-21.55% sl=54.00 ivz=0.44 oichg=-1.33 st_dir=-1 skip_hard_sl=False
+10:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:50:00  INFO   BAR   87 2026-10-16 10:49:00 call=   99.65 put=  120.90 spot= 23093.35 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=11
+10:50:00  INFO     [EXIT-CHECK] signal=LONG bar_held=12 close=59.45 entry=74.00 pnl=-19.66% sl=54.00 ivz=1.40 oichg=1.08 st_dir=-1 skip_hard_sl=False
+10:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:51:00  INFO   BAR   88 2026-10-16 10:50:00 call=   94.80 put=  126.75 spot= 23088.85 buf=8000/8000 vix=14.4 IN LONG entry=74.00 bars=12
+10:51:00  INFO     [EXIT-CHECK] signal=LONG bar_held=13 close=56.10 entry=74.00 pnl=-24.19% sl=54.00 ivz=-0.45 oichg=0.12 st_dir=-1 skip_hard_sl=False
+10:51:00  INFO   EXIT-GATE reason=SL adx_1m=8.37 pdi=47.9 ndi=52.1 adx_src=call_close nbars=8000 spot_chg_5bar=-0.09%
+10:51:00  INFO   EXIT LONG     54.00 entry=   74.00 pnl=-27.027% SL bars_held=13 sl=54.00 ivz=-0.45 oichg=0.12 sl_method=STATIC_20PTS
+10:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:52:00  INFO   BAR   89 2026-10-16 10:51:00 call=   99.20 put=  120.95 spot= 23097.60 buf=8000/8000 vix=14.4 COOLDOWN=2
+10:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:53:00  INFO   BAR   90 2026-10-16 10:52:00 call=   97.95 put=  122.20 spot= 23095.30 buf=8000/8000 vix=14.4 COOLDOWN=1
+10:53:00  INFO     [GRID] legs with live price: 42/42
+10:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:54:00  INFO   BAR   91 2026-10-16 10:53:00 call=   93.15 put=  127.20 spot= 23088.15 buf=8000/8000 vix=14.4 FLAT
+10:54:00  INFO   SIGNAL FILTERED raw=LONG conf=0.950 reason=lowrvol0.74<0.8
+10:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:55:00  INFO   BAR   92 2026-10-16 10:54:00 call=   95.50 put=  124.40 spot= 23094.85 buf=8000/8000 vix=14.4 FLAT
+10:55:00  INFO   SIGNAL FILTERED raw=LONG conf=0.884 reason=lowadx1.5<22
+10:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:56:00  INFO   BAR   93 2026-10-16 10:55:00 call=   94.05 put=  125.50 spot= 23090.70 buf=8000/8000 vix=14.4 FLAT
+10:56:00  INFO   SIGNAL FILTERED raw=LONG conf=0.949 reason=lowrvol0.42<0.8
+10:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:57:00  INFO   BAR   94 2026-10-16 10:56:00 call=   96.35 put=  121.00 spot= 23097.00 buf=8000/8000 vix=14.4 FLAT
+10:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:58:00  INFO   BAR   95 2026-10-16 10:57:00 call=   95.00 put=  122.70 spot= 23095.10 buf=8000/8000 vix=14.4 FLAT
+10:58:00  INFO   SIGNAL FILTERED raw=LONG conf=0.885 reason=lowrvol0.73<0.8
+10:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+10:59:00  INFO   BAR   96 2026-10-16 10:58:00 call=  101.15 put=  116.75 spot= 23106.00 buf=8000/8000 vix=14.4 FLAT
+10:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:00:00  INFO   BAR   97 2026-10-16 10:59:00 call=  102.20 put=  116.25 spot= 23110.10 buf=8000/8000 vix=14.4 FLAT
+11:00:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.861 reason=5mbulltrend
+11:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:01:00  INFO   BAR   98 2026-10-16 11:00:00 call=  110.25 put=  111.30 spot= 23119.10 buf=8000/8000 vix=14.4 FLAT
+11:01:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.944 reason=5mbulltrend
+11:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:02:00  INFO   BAR   99 2026-10-16 11:01:00 call=  108.20 put=  112.00 spot= 23115.55 buf=8000/8000 vix=14.4 FLAT
+11:02:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.958 reason=lowadx10.6<22
+11:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:03:00  INFO   BAR  100 2026-10-16 11:02:00 call=  104.25 put=  115.60 spot= 23110.40 buf=8000/8000 vix=14.4 FLAT
+11:03:00  INFO     [GRID] legs with live price: 42/42
+11:03:00  INFO     [MODEL] pl=0.066 ps=0.934 sig=SHORT adx=28.5 rvol=0.90
+11:03:00  INFO   [RULE-PIN] strike=22650 rows=8000 rsi5m=77.99426933680259 macdh5m=2.332340437190343
+11:03:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.934 reason=5mbulltrend
+11:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:04:00  INFO   BAR  101 2026-10-16 11:03:00 call=  104.20 put=  115.10 spot= 23111.00 buf=8000/8000 vix=14.4 FLAT
+11:04:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.942 reason=lowadx21.8<22
+11:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:05:00  INFO   BAR  102 2026-10-16 11:04:00 call=  100.75 put=  119.80 spot= 23104.85 buf=8000/8000 vix=14.4 FLAT
+11:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:06:00  INFO   BAR  103 2026-10-16 11:05:00 call=   97.10 put=  123.05 spot= 23099.75 buf=8000/8000 vix=14.4 FLAT
+11:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:07:00  INFO   BAR  104 2026-10-16 11:06:00 call=   94.90 put=  126.05 spot= 23092.10 buf=8000/8000 vix=14.4 FLAT
+11:07:00  INFO   ENTRY-GATE adx_1m=34.79 pdi=32.6 ndi=67.4 adx_src=call_close nbars=8000 spot_chg_5bar=-0.10% revguard=on
+11:07:00  INFO   ENTRY LONG     73.65 symbol=PAPER_LONG_23150CE PL=0.890 PS=0.110 conf=0.890 SL=53.65 momscore=5 ATR=5.43 OTM=1 ATM=23100 strike=23150 cost=Rs4787 dist=58pts OI=0 filter=OK
+11:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:08:00  INFO   BAR  105 2026-10-16 11:07:00 call=   91.65 put=  129.55 spot= 23087.60 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=0
+11:08:00  INFO     [EXIT-CHECK] signal=LONG bar_held=1 close=70.90 entry=73.65 pnl=-3.73% sl=53.65 ivz=-0.81 oichg=0.11 st_dir=-1 skip_hard_sl=False
+11:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:09:00  INFO   BAR  106 2026-10-16 11:08:00 call=   87.65 put=  134.20 spot= 23076.30 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=1
+11:09:00  INFO     [EXIT-CHECK] signal=LONG bar_held=2 close=67.40 entry=73.65 pnl=-8.49% sl=53.65 ivz=0.22 oichg=-2.89 st_dir=-1 skip_hard_sl=False
+11:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:10:00  INFO   ATM roll 23100 -> 23050  spot=23068.25
+11:10:00  INFO   BAR  107 2026-10-16 11:09:00 call=  106.30 put=  114.25 spot= 23068.25 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=2
+11:10:00  INFO     [EXIT-CHECK] signal=LONG bar_held=3 close=63.65 entry=73.65 pnl=-13.58% sl=53.65 ivz=-0.17 oichg=-3.07 st_dir=-1 skip_hard_sl=False
+11:10:00  INFO   ChainGrid: re-centered 23150 -> 23050  +4 legs -4 legs
+11:10:00  INFO   ChainGrid.seed: seeded 4/4 legs from REST quote
+11:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:11:00  INFO   BAR  108 2026-10-16 11:10:00 call=  107.30 put=  115.40 spot= 23062.45 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=3
+11:11:00  INFO     [EXIT-CHECK] signal=LONG bar_held=4 close=64.60 entry=73.65 pnl=-12.29% sl=53.65 ivz=2.90 oichg=-1.36 st_dir=-1 skip_hard_sl=False
+11:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:12:00  INFO   ATM roll 23050 -> 23100  spot=23076.45
+11:12:00  INFO   BAR  109 2026-10-16 11:11:00 call=   89.60 put=  133.35 spot= 23076.45 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=4
+11:12:00  INFO     [EXIT-CHECK] signal=LONG bar_held=5 close=69.40 entry=73.65 pnl=-5.77% sl=53.65 ivz=2.08 oichg=0.49 st_dir=-1 skip_hard_sl=False
+11:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:13:00  INFO   BAR  110 2026-10-16 11:12:00 call=   97.00 put=  124.55 spot= 23091.65 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=5
+11:13:00  INFO     [GRID] legs with live price: 42/42
+11:13:00  INFO     [EXIT-CHECK] signal=LONG bar_held=6 close=75.60 entry=73.65 pnl=2.65% sl=53.65 ivz=1.75 oichg=2.46 st_dir=-1 skip_hard_sl=False
+11:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:14:00  INFO   BAR  111 2026-10-16 11:13:00 call=   98.60 put=  121.35 spot= 23098.10 buf=8000/8000 vix=14.4 IN LONG entry=73.65 bars=6
+11:14:00  INFO     [EXIT-CHECK] signal=LONG bar_held=7 close=76.80 entry=73.65 pnl=4.28% sl=53.65 ivz=0.45 oichg=1.81 st_dir=-1 skip_hard_sl=False
+11:14:00  INFO   EXIT-GATE reason=SUPERTREND adx_1m=12.76 pdi=47.7 ndi=52.3 adx_src=call_close nbars=8000 spot_chg_5bar=+0.09%
+11:14:00  INFO   EXIT LONG     76.80 entry=   73.65 pnl=4.277% SUPERTREND bars_held=7 sl=53.65 ivz=0.45 oichg=1.81 sl_method=STATIC_20PTS
+11:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:15:00  INFO   BAR  112 2026-10-16 11:14:00 call=   94.00 put=  126.65 spot= 23088.85 buf=8000/8000 vix=14.4 COOLDOWN=2
+11:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:16:00  INFO   BAR  113 2026-10-16 11:15:00 call=   96.25 put=  123.05 spot= 23091.10 buf=8000/8000 vix=14.4 COOLDOWN=1
+11:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:17:00  INFO   BAR  114 2026-10-16 11:16:00 call=   94.15 put=  124.80 spot= 23089.40 buf=8000/8000 vix=14.4 FLAT
+11:17:00  INFO   SIGNAL FILTERED raw=LONG conf=0.928 reason=lowadx21.4<22
+11:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:18:00  INFO   BAR  115 2026-10-16 11:17:00 call=   91.00 put=  130.15 spot= 23085.20 buf=8000/8000 vix=14.4 FLAT
+11:18:00  INFO   SIGNAL FILTERED raw=LONG conf=0.967 reason=lowadx20.7<22
+11:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:19:00  INFO   BAR  116 2026-10-16 11:18:00 call=   89.40 put=  132.45 spot= 23083.65 buf=8000/8000 vix=14.4 FLAT
+11:19:00  INFO   SIGNAL FILTERED raw=LONG conf=0.972 reason=lowrvol0.63<0.8
+11:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:20:00  INFO   BAR  117 2026-10-16 11:19:00 call=   90.20 put=  131.45 spot= 23082.25 buf=8000/8000 vix=14.4 FLAT
+11:20:00  INFO   SIGNAL FILTERED raw=LONG conf=0.974 reason=lowrvol0.68<0.8
+11:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:21:00  INFO   BAR  118 2026-10-16 11:20:00 call=   89.05 put=  131.35 spot= 23083.65 buf=8000/8000 vix=14.4 FLAT
+11:21:00  INFO   SIGNAL FILTERED raw=LONG conf=0.977 reason=lowrvol0.55<0.8
+11:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:22:00  INFO   BAR  119 2026-10-16 11:21:00 call=   89.80 put=  130.50 spot= 23080.10 buf=8000/8000 vix=14.4 FLAT
+11:22:00  INFO   SIGNAL FILTERED raw=LONG conf=0.976 reason=lowrvol0.52<0.8
+11:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:23:00  INFO   BAR  120 2026-10-16 11:22:00 call=   95.75 put=  122.75 spot= 23092.55 buf=8000/8000 vix=14.4 FLAT
+11:23:00  INFO     [GRID] legs with live price: 42/42
+11:23:00  INFO     [MODEL] pl=0.847 ps=0.153 sig=NONE adx=0.5 rvol=1.19
+11:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:24:00  INFO   BAR  121 2026-10-16 11:23:00 call=   99.50 put=  118.65 spot= 23099.50 buf=8000/8000 vix=14.4 FLAT
+11:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:25:00  INFO   BAR  122 2026-10-16 11:24:00 call=  105.15 put=  113.10 spot= 23109.30 buf=8000/8000 vix=14.4 FLAT
+11:25:00  INFO   ENTRY-GATE adx_1m=42.92 pdi=71.5 ndi=28.5 adx_src=call_close nbars=8000 spot_chg_5bar=+0.12% revguard=on
+11:25:00  INFO   ENTRY SHORT    89.70 symbol=PAPER_SHORT_23050PE PL=0.119 PS=0.881 conf=0.881 SL=69.70 momscore=6 ATR=6.71 OTM=1 ATM=23100 strike=23050 cost=Rs5830 dist=59pts OI=0 filter=OK
+11:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:26:00  INFO   BAR  123 2026-10-16 11:25:00 call=  106.20 put=  110.75 spot= 23112.20 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=0
+11:26:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=1 close=88.85 entry=89.70 pnl=-0.95% sl=69.70 ivz=-1.67 oichg=0.15 st_dir=-1 skip_hard_sl=False
+11:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:27:00  INFO   BAR  124 2026-10-16 11:26:00 call=  105.25 put=  113.40 spot= 23110.70 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=1
+11:27:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=2 close=90.70 entry=89.70 pnl=1.11% sl=69.70 ivz=-0.92 oichg=0.11 st_dir=-1 skip_hard_sl=False
+11:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:28:00  INFO   BAR  125 2026-10-16 11:27:00 call=  106.55 put=  110.70 spot= 23114.95 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=2
+11:28:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=3 close=88.25 entry=89.70 pnl=-1.62% sl=69.70 ivz=-1.17 oichg=0.60 st_dir=-1 skip_hard_sl=False
+11:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:29:02  INFO   BAR  126 2026-10-16 11:28:00 call=  107.45 put=  109.70 spot= 23116.90 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=3
+11:29:02  INFO     [EXIT-CHECK] signal=SHORT bar_held=4 close=87.25 entry=89.70 pnl=-2.73% sl=69.70 ivz=-1.16 oichg=0.19 st_dir=-1 skip_hard_sl=False
+11:29:02  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:30:00  INFO   BAR  127 2026-10-16 11:29:00 call=  108.40 put=  108.15 spot= 23117.10 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=4
+11:30:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=5 close=86.10 entry=89.70 pnl=-4.01% sl=69.70 ivz=-1.55 oichg=0.12 st_dir=-1 skip_hard_sl=False
+11:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:31:00  INFO   ATM roll 23100 -> 23150  spot=23125.15
+11:31:00  INFO   BAR  128 2026-10-16 11:30:00 call=   87.15 put=  130.80 spot= 23125.15 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=5
+11:31:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=6 close=83.45 entry=89.70 pnl=-6.97% sl=69.70 ivz=-1.17 oichg=-0.25 st_dir=-1 skip_hard_sl=False
+11:31:00  INFO   ChainGrid: re-centered 23050 -> 23150  +4 legs -4 legs
+11:31:00  INFO   ChainGrid.seed: seeded 4/4 legs from REST quote
+11:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:32:00  INFO   BAR  129 2026-10-16 11:31:00 call=   87.15 put=  129.10 spot= 23125.50 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=6
+11:32:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=7 close=82.30 entry=89.70 pnl=-8.25% sl=69.70 ivz=-1.50 oichg=-0.36 st_dir=-1 skip_hard_sl=False
+11:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:33:00  INFO   ATM roll 23150 -> 23100  spot=23113.60
+11:33:00  INFO   BAR  130 2026-10-16 11:32:00 call=  105.25 put=  109.85 spot= 23113.60 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=7
+11:33:00  INFO     [GRID] legs with live price: 42/42
+11:33:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=8 close=87.85 entry=89.70 pnl=-2.06% sl=69.70 ivz=-0.95 oichg=1.23 st_dir=-1 skip_hard_sl=False
+11:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:34:00  INFO   BAR  131 2026-10-16 11:33:00 call=  104.70 put=  109.70 spot= 23110.90 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=8
+11:34:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=9 close=87.60 entry=89.70 pnl=-2.34% sl=69.70 ivz=-1.42 oichg=1.96 st_dir=-1 skip_hard_sl=False
+11:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:35:00  INFO   BAR  132 2026-10-16 11:34:00 call=  109.60 put=  104.70 spot= 23121.30 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=9
+11:35:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=10 close=83.55 entry=89.70 pnl=-6.86% sl=69.70 ivz=-1.25 oichg=0.96 st_dir=-1 skip_hard_sl=False
+11:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:36:00  INFO   BAR  133 2026-10-16 11:35:00 call=  111.50 put=  103.50 spot= 23123.90 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=10
+11:36:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=11 close=82.55 entry=89.70 pnl=-7.97% sl=69.70 ivz=-1.14 oichg=0.36 st_dir=-1 skip_hard_sl=False
+11:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:36:24  ERROR  Feed error: no close frame received or sent  reconnecting in 5s...
+11:36:24  INFO   Bar accumulator reset
+11:36:24  INFO   Waiting 5s before reconnect...
+11:36:29  INFO   Last connection was healthy — backoff reset to 5s
+11:36:29  INFO   Reconnecting...  next_backoff=5s
+11:36:29  INFO   Feed recreated  class=MarketFeed
+11:36:29  INFO   FEED has subscribe_symbols: True
+11:36:29  INFO   FEED has unsubscribe_symbols: True
+11:36:39  ERROR  Feed error: timed out during opening handshake  reconnecting in 5s...
+11:36:39  INFO   Bar accumulator reset
+11:36:39  INFO   Waiting 5s before reconnect...
+11:36:44  INFO   Reconnecting...  next_backoff=10s
+11:36:44  INFO   Feed recreated  class=MarketFeed
+11:36:44  INFO   FEED has subscribe_symbols: True
+11:36:44  INFO   FEED has unsubscribe_symbols: True
+11:36:46  INFO   Feed connected — starting tick poll loop
+11:37:00  INFO   BAR  134 2026-10-16 11:36:00 call=  108.40 put=  106.15 spot= 23122.45 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=11
+11:37:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=12 close=84.65 entry=89.70 pnl=-5.63% sl=69.70 ivz=-0.40 oichg=0.36 st_dir=-1 skip_hard_sl=False
+11:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:38:00  INFO   BAR  135 2026-10-16 11:37:00 call=  106.50 put=  106.95 spot= 23119.75 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=12
+11:38:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=13 close=85.35 entry=89.70 pnl=-4.85% sl=69.70 ivz=-0.48 oichg=-0.92 st_dir=-1 skip_hard_sl=False
+11:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:39:00  INFO   BAR  136 2026-10-16 11:38:00 call=  107.15 put=  106.80 spot= 23118.95 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=13
+11:39:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=14 close=85.00 entry=89.70 pnl=-5.24% sl=69.70 ivz=-0.75 oichg=0.34 st_dir=-1 skip_hard_sl=False
+11:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:40:00  INFO   BAR  137 2026-10-16 11:39:00 call=  111.40 put=  102.65 spot= 23123.70 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=14
+11:40:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=15 close=82.05 entry=89.70 pnl=-8.53% sl=69.70 ivz=-1.33 oichg=1.19 st_dir=-1 skip_hard_sl=False
+11:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:41:00  INFO   ATM roll 23100 -> 23150  spot=23126.95
+11:41:00  INFO   BAR  138 2026-10-16 11:40:00 call=   87.50 put=  127.75 spot= 23126.95 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=15
+11:41:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=16 close=81.10 entry=89.70 pnl=-9.59% sl=69.70 ivz=-1.28 oichg=-0.81 st_dir=-1 skip_hard_sl=False
+11:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:42:00  INFO   BAR  139 2026-10-16 11:41:00 call=   87.70 put=  127.00 spot= 23129.90 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=16
+11:42:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=17 close=80.55 entry=89.70 pnl=-10.20% sl=69.70 ivz=-0.72 oichg=-1.35 st_dir=-1 skip_hard_sl=False
+11:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:43:00  INFO   BAR  140 2026-10-16 11:42:00 call=   87.50 put=  126.85 spot= 23126.95 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=17
+11:43:00  INFO     [GRID] legs with live price: 42/42
+11:43:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=18 close=80.30 entry=89.70 pnl=-10.48% sl=69.70 ivz=-1.90 oichg=0.49 st_dir=-1 skip_hard_sl=False
+11:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:44:00  INFO   ATM roll 23150 -> 23100  spot=23124.60
+11:44:00  INFO   BAR  141 2026-10-16 11:43:00 call=  110.25 put=  101.70 spot= 23124.60 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=18
+11:44:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=19 close=81.15 entry=89.70 pnl=-9.53% sl=69.70 ivz=-1.71 oichg=0.08 st_dir=-1 skip_hard_sl=False
+11:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:45:00  INFO   BAR  142 2026-10-16 11:44:00 call=  106.30 put=  104.70 spot= 23123.00 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=19
+11:45:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=20 close=82.95 entry=89.70 pnl=-7.53% sl=69.70 ivz=-0.48 oichg=0.00 st_dir=-1 skip_hard_sl=False
+11:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:46:00  INFO   BAR  143 2026-10-16 11:45:00 call=  106.60 put=  106.30 spot= 23122.35 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=20
+11:46:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=21 close=84.75 entry=89.70 pnl=-5.52% sl=69.70 ivz=1.04 oichg=-0.45 st_dir=-1 skip_hard_sl=False
+11:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:47:00  INFO   BAR  144 2026-10-16 11:46:00 call=  106.15 put=  106.45 spot= 23120.70 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=21
+11:47:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=22 close=84.65 entry=89.70 pnl=-5.63% sl=69.70 ivz=0.47 oichg=2.07 st_dir=-1 skip_hard_sl=False
+11:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:48:00  INFO   BAR  145 2026-10-16 11:47:00 call=  110.00 put=  102.50 spot= 23123.70 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=22
+11:48:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=23 close=81.05 entry=89.70 pnl=-9.64% sl=69.70 ivz=-1.97 oichg=0.00 st_dir=-1 skip_hard_sl=False
+11:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:49:00  INFO   BAR  146 2026-10-16 11:48:00 call=  102.15 put=  109.70 spot= 23117.80 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=23
+11:49:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=24 close=87.40 entry=89.70 pnl=-2.56% sl=69.70 ivz=2.19 oichg=-0.04 st_dir=-1 skip_hard_sl=False
+11:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:50:00  INFO   BAR  147 2026-10-16 11:49:00 call=  103.15 put=  108.75 spot= 23115.05 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=24
+11:50:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=25 close=86.70 entry=89.70 pnl=-3.34% sl=69.70 ivz=0.43 oichg=0.57 st_dir=-1 skip_hard_sl=False
+11:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:51:00  INFO   BAR  148 2026-10-16 11:50:00 call=  106.00 put=  105.60 spot= 23119.10 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=25
+11:51:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=26 close=84.00 entry=89.70 pnl=-6.35% sl=69.70 ivz=-0.59 oichg=0.91 st_dir=-1 skip_hard_sl=False
+11:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:52:00  INFO   BAR  149 2026-10-16 11:51:00 call=  105.10 put=  106.30 spot= 23116.50 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=26
+11:52:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=27 close=84.80 entry=89.70 pnl=-5.46% sl=69.70 ivz=-0.75 oichg=0.14 st_dir=-1 skip_hard_sl=False
+11:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:53:00  INFO   BAR  150 2026-10-16 11:52:00 call=  102.85 put=  108.20 spot= 23113.45 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=27
+11:53:00  INFO     [GRID] legs with live price: 42/42
+11:53:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=28 close=86.40 entry=89.70 pnl=-3.68% sl=69.70 ivz=-0.29 oichg=0.43 st_dir=-1 skip_hard_sl=False
+11:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:54:00  INFO   BAR  151 2026-10-16 11:53:00 call=  104.20 put=  106.45 spot= 23116.55 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=28
+11:54:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=29 close=84.25 entry=89.70 pnl=-6.08% sl=69.70 ivz=-1.13 oichg=0.41 st_dir=-1 skip_hard_sl=False
+11:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:55:00  INFO   BAR  152 2026-10-16 11:54:00 call=  106.35 put=  104.30 spot= 23119.50 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=29
+11:55:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=30 close=82.70 entry=89.70 pnl=-7.80% sl=69.70 ivz=-1.37 oichg=0.60 st_dir=-1 skip_hard_sl=False
+11:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:56:00  INFO   BAR  153 2026-10-16 11:55:00 call=  106.20 put=  104.20 spot= 23120.50 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=30
+11:56:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=31 close=82.65 entry=89.70 pnl=-7.86% sl=69.70 ivz=-0.98 oichg=0.01 st_dir=-1 skip_hard_sl=False
+11:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:57:00  INFO   ATM roll 23100 -> 23150  spot=23131.45
+11:57:00  INFO   BAR  154 2026-10-16 11:56:00 call=   86.05 put=  125.85 spot= 23131.45 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=31
+11:57:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=32 close=80.00 entry=89.70 pnl=-10.81% sl=69.70 ivz=0.50 oichg=-0.40 st_dir=-1 skip_hard_sl=False
+11:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:58:00  INFO   BAR  155 2026-10-16 11:57:00 call=   84.35 put=  128.60 spot= 23126.25 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=32
+11:58:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=33 close=82.25 entry=89.70 pnl=-8.31% sl=69.70 ivz=0.81 oichg=-1.92 st_dir=-1 skip_hard_sl=False
+11:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+11:59:00  INFO   ATM roll 23150 -> 23100  spot=23122.30
+11:59:00  INFO   BAR  156 2026-10-16 11:58:00 call=  105.60 put=  105.35 spot= 23122.30 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=33
+11:59:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=34 close=83.50 entry=89.70 pnl=-6.91% sl=69.70 ivz=0.56 oichg=0.11 st_dir=-1 skip_hard_sl=False
+11:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:00:00  INFO   BAR  157 2026-10-16 11:59:00 call=  106.45 put=  103.25 spot= 23122.00 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=34
+12:00:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=35 close=82.15 entry=89.70 pnl=-8.42% sl=69.70 ivz=-0.82 oichg=0.02 st_dir=-1 skip_hard_sl=False
+12:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:01:00  INFO   BAR  158 2026-10-16 12:00:00 call=  104.90 put=  103.60 spot= 23119.65 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=35
+12:01:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=36 close=81.95 entry=89.70 pnl=-8.64% sl=69.70 ivz=-1.66 oichg=0.67 st_dir=-1 skip_hard_sl=False
+12:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:02:00  INFO   BAR  159 2026-10-16 12:01:00 call=  102.35 put=  106.60 spot= 23116.95 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=36
+12:02:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=37 close=85.05 entry=89.70 pnl=-5.18% sl=69.70 ivz=0.17 oichg=0.17 st_dir=-1 skip_hard_sl=False
+12:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:03:00  INFO   BAR  160 2026-10-16 12:02:00 call=  101.20 put=  107.30 spot= 23114.45 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=37
+12:03:00  INFO     [GRID] legs with live price: 42/42
+12:03:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=38 close=85.50 entry=89.70 pnl=-4.68% sl=69.70 ivz=-0.33 oichg=-0.20 st_dir=-1 skip_hard_sl=False
+12:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:04:00  INFO   BAR  161 2026-10-16 12:03:00 call=   97.20 put=  112.35 spot= 23107.50 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=38
+12:04:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=39 close=88.70 entry=89.70 pnl=-1.11% sl=69.70 ivz=0.01 oichg=0.77 st_dir=-1 skip_hard_sl=False
+12:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:05:00  INFO   BAR  162 2026-10-16 12:04:00 call=   94.40 put=  114.70 spot= 23105.60 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=39
+12:05:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=40 close=91.50 entry=89.70 pnl=2.01% sl=69.70 ivz=1.64 oichg=-0.03 st_dir=-1 skip_hard_sl=False
+12:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:06:00  INFO   BAR  163 2026-10-16 12:05:00 call=   95.65 put=  113.90 spot= 23107.95 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=40
+12:06:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=41 close=91.05 entry=89.70 pnl=1.51% sl=69.70 ivz=1.94 oichg=0.01 st_dir=-1 skip_hard_sl=False
+12:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:07:00  INFO   BAR  164 2026-10-16 12:06:00 call=   94.75 put=  115.40 spot= 23105.05 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=41
+12:07:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=42 close=92.35 entry=89.70 pnl=2.95% sl=69.70 ivz=1.82 oichg=0.67 st_dir=1 skip_hard_sl=False
+12:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:08:00  INFO   BAR  165 2026-10-16 12:07:00 call=   91.50 put=  119.55 spot= 23100.15 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=42
+12:08:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=43 close=95.55 entry=89.70 pnl=6.52% sl=69.70 ivz=2.23 oichg=-0.06 st_dir=1 skip_hard_sl=False
+12:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:09:00  INFO   BAR  166 2026-10-16 12:08:00 call=   95.45 put=  115.65 spot= 23104.40 buf=8000/8000 vix=14.4 IN SHORT entry=89.70 bars=43
+12:09:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=44 close=92.00 entry=89.70 pnl=2.56% sl=69.70 ivz=1.11 oichg=0.04 st_dir=1 skip_hard_sl=False
+12:09:00  INFO   EXIT-GATE reason=IV_ZSCORE adx_1m=14.35 pdi=41.7 ndi=58.3 adx_src=call_close nbars=8000 spot_chg_5bar=-0.01%
+12:09:00  INFO   EXIT SHORT    92.00 entry=   89.70 pnl=2.564% IV_ZSCORE bars_held=44 sl=69.70 ivz=1.11 oichg=0.04 sl_method=STATIC_20PTS
+12:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:10:00  INFO   BAR  167 2026-10-16 12:09:00 call=   98.40 put=  111.55 spot= 23110.45 buf=8000/8000 vix=14.4 COOLDOWN=2
+12:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:11:00  INFO   BAR  168 2026-10-16 12:10:00 call=  102.80 put=  106.50 spot= 23117.75 buf=8000/8000 vix=14.4 COOLDOWN=1
+12:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:12:00  INFO   BAR  169 2026-10-16 12:11:00 call=  101.75 put=  107.35 spot= 23114.60 buf=8000/8000 vix=14.4 FLAT
+12:12:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.937 reason=lunchchop
+12:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:13:00  INFO   BAR  170 2026-10-16 12:12:00 call=  103.20 put=  104.90 spot= 23118.55 buf=8000/8000 vix=14.4 FLAT
+12:13:00  INFO     [GRID] legs with live price: 42/42
+12:13:00  INFO     [MODEL] pl=0.069 ps=0.931 sig=SHORT adx=67.8 rvol=1.04
+12:13:00  INFO   [RULE-PIN] strike=22650 rows=8000 rsi5m=53.242424237906704 macdh5m=-3.37372190038635
+12:13:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.931 reason=lunchchop
+12:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:14:00  INFO   BAR  171 2026-10-16 12:13:00 call=  102.85 put=  105.70 spot= 23115.65 buf=8000/8000 vix=14.4 FLAT
+12:14:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.939 reason=lunchchop
+12:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:15:00  INFO   BAR  172 2026-10-16 12:14:00 call=  103.85 put=  104.25 spot= 23120.40 buf=8000/8000 vix=14.4 FLAT
+12:15:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.948 reason=lunchchop
+12:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:16:00  INFO   BAR  173 2026-10-16 12:15:00 call=  105.90 put=  102.10 spot= 23120.35 buf=8000/8000 vix=14.4 FLAT
+12:16:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.977 reason=lunchchop
+12:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:17:00  INFO   BAR  174 2026-10-16 12:16:00 call=  107.00 put=  100.45 spot= 23123.55 buf=8000/8000 vix=14.4 FLAT
+12:17:00  INFO   ENTRY-GATE adx_1m=36.54 pdi=68.3 ndi=31.7 adx_src=call_close nbars=8000 spot_chg_5bar=+0.04% revguard=on
+12:17:00  INFO   ENTRY SHORT    79.70 symbol=PAPER_SHORT_23050PE PL=0.023 PS=0.977 conf=0.977 SL=59.70 momscore=5 ATR=4.91 OTM=1 ATM=23100 strike=23050 cost=Rs5180 dist=74pts OI=0 filter=OK
+12:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:18:00  INFO   ATM roll 23100 -> 23150  spot=23128.65
+12:18:00  INFO   BAR  175 2026-10-16 12:17:00 call=   85.60 put=  121.65 spot= 23128.65 buf=8000/8000 vix=14.4 IN SHORT entry=79.70 bars=0
+12:18:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=1 close=76.35 entry=79.70 pnl=-4.20% sl=59.70 ivz=-2.00 oichg=-0.77 st_dir=-1 skip_hard_sl=False
+12:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:19:00  INFO   BAR  176 2026-10-16 12:18:00 call=   87.85 put=  118.80 spot= 23132.15 buf=8000/8000 vix=14.4 IN SHORT entry=79.70 bars=1
+12:19:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=2 close=74.10 entry=79.70 pnl=-7.03% sl=59.70 ivz=-2.07 oichg=-1.21 st_dir=-1 skip_hard_sl=False
+12:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:20:00  INFO   BAR  177 2026-10-16 12:19:00 call=   83.75 put=  122.70 spot= 23130.10 buf=8000/8000 vix=14.4 IN SHORT entry=79.70 bars=2
+12:20:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=3 close=77.15 entry=79.70 pnl=-3.20% sl=59.70 ivz=-0.96 oichg=-1.01 st_dir=-1 skip_hard_sl=False
+12:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:21:00  INFO   ATM roll 23150 -> 23100  spot=23123.85
+12:21:00  INFO   BAR  178 2026-10-16 12:20:00 call=  106.25 put=   99.45 spot= 23123.85 buf=8000/8000 vix=14.4 IN SHORT entry=79.70 bars=3
+12:21:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=4 close=78.80 entry=79.70 pnl=-1.13% sl=59.70 ivz=-1.21 oichg=-0.03 st_dir=-1 skip_hard_sl=False
+12:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:22:00  INFO   BAR  179 2026-10-16 12:21:00 call=  105.55 put=  100.05 spot= 23122.20 buf=8000/8000 vix=14.4 IN SHORT entry=79.70 bars=4
+12:22:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=5 close=79.15 entry=79.70 pnl=-0.69% sl=59.70 ivz=-1.20 oichg=1.40 st_dir=-1 skip_hard_sl=False
+12:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:23:00  INFO   BAR  180 2026-10-16 12:22:00 call=  100.05 put=  105.00 spot= 23113.90 buf=8000/8000 vix=14.4 IN SHORT entry=79.70 bars=5
+12:23:00  INFO     [GRID] legs with live price: 42/42
+12:23:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=6 close=83.40 entry=79.70 pnl=4.64% sl=59.70 ivz=-0.73 oichg=1.00 st_dir=-1 skip_hard_sl=False
+12:23:00  INFO   EXIT-GATE reason=SUPERTREND adx_1m=16.73 pdi=53.2 ndi=46.8 adx_src=call_close nbars=8000 spot_chg_5bar=-0.06%
+12:23:00  INFO   EXIT SHORT    83.40 entry=   79.70 pnl=4.642% SUPERTREND bars_held=6 sl=59.70 ivz=-0.73 oichg=1.00 sl_method=STATIC_20PTS
+12:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:24:00  INFO   BAR  181 2026-10-16 12:23:00 call=   97.80 put=  107.75 spot= 23111.05 buf=8000/8000 vix=14.4 COOLDOWN=2
+12:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:25:00  INFO   BAR  182 2026-10-16 12:24:00 call=   96.50 put=  109.45 spot= 23107.15 buf=8000/8000 vix=14.4 COOLDOWN=1
+12:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:26:00  INFO   BAR  183 2026-10-16 12:25:00 call=   98.85 put=  108.35 spot= 23109.25 buf=8000/8000 vix=14.4 FLAT
+12:26:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.886 reason=lowadx3.3<22
+12:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:27:00  INFO   BAR  184 2026-10-16 12:26:00 call=   99.20 put=  107.95 spot= 23110.45 buf=8000/8000 vix=14.4 FLAT
+12:27:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.894 reason=lowadx5.7<22
+12:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:28:00  INFO   BAR  185 2026-10-16 12:27:00 call=   98.75 put=  108.65 spot= 23107.85 buf=8000/8000 vix=14.4 FLAT
+12:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:29:00  INFO   BAR  186 2026-10-16 12:28:00 call=  101.80 put=  104.05 spot= 23112.80 buf=8000/8000 vix=14.4 FLAT
+12:29:00  INFO   SIGNAL FILTERED raw=SHORT conf=0.923 reason=lowadx15.1<22
+12:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:30:00  INFO   BAR  187 2026-10-16 12:29:00 call=  105.75 put=  100.15 spot= 23121.15 buf=8000/8000 vix=14.4 FLAT
+12:30:00  INFO   ENTRY-GATE adx_1m=30.98 pdi=65.5 ndi=34.5 adx_src=call_close nbars=8000 spot_chg_5bar=+0.06% revguard=on
+12:30:00  INFO   ENTRY SHORT    79.40 symbol=PAPER_SHORT_23050PE PL=0.037 PS=0.963 conf=0.963 SL=59.40 momscore=6 ATR=3.39 OTM=1 ATM=23100 strike=23050 cost=Rs5161 dist=71pts OI=0 filter=OK
+12:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:31:00  INFO   ATM roll 23100 -> 23150  spot=23125.30
+12:31:00  INFO   BAR  188 2026-10-16 12:30:00 call=   84.05 put=  121.45 spot= 23125.30 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=0
+12:31:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=1 close=76.00 entry=79.40 pnl=-4.28% sl=59.40 ivz=-2.16 oichg=-2.20 st_dir=-1 skip_hard_sl=False
+12:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:32:00  INFO   ATM roll 23150 -> 23100  spot=23124.10
+12:32:00  INFO   BAR  189 2026-10-16 12:31:00 call=  108.80 put=   96.05 spot= 23124.10 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=1
+12:32:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=2 close=75.65 entry=79.40 pnl=-4.72% sl=59.40 ivz=-2.32 oichg=-1.21 st_dir=-1 skip_hard_sl=False
+12:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:33:00  INFO   BAR  190 2026-10-16 12:32:00 call=  105.50 put=   98.40 spot= 23121.80 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=2
+12:33:00  INFO     [GRID] legs with live price: 42/42
+12:33:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=3 close=77.45 entry=79.40 pnl=-2.46% sl=59.40 ivz=-1.51 oichg=-0.13 st_dir=-1 skip_hard_sl=False
+12:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:34:00  INFO   BAR  191 2026-10-16 12:33:00 call=  104.30 put=   99.40 spot= 23117.90 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=3
+12:34:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=4 close=78.30 entry=79.40 pnl=-1.39% sl=59.40 ivz=-1.69 oichg=0.89 st_dir=-1 skip_hard_sl=False
+12:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:35:00  INFO   BAR  192 2026-10-16 12:34:00 call=  107.75 put=   95.15 spot= 23123.40 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=4
+12:35:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=5 close=74.95 entry=79.40 pnl=-5.60% sl=59.40 ivz=-2.11 oichg=1.46 st_dir=-1 skip_hard_sl=False
+12:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:36:00  INFO   ATM roll 23100 -> 23150  spot=23127.30
+12:36:00  INFO   BAR  193 2026-10-16 12:35:00 call=   82.45 put=  120.30 spot= 23127.30 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=5
+12:36:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=6 close=74.85 entry=79.40 pnl=-5.73% sl=59.40 ivz=-1.17 oichg=-0.79 st_dir=-1 skip_hard_sl=False
+12:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:37:00  INFO   BAR  194 2026-10-16 12:36:00 call=   86.15 put=  113.85 spot= 23130.90 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=6
+12:37:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=7 close=70.10 entry=79.40 pnl=-11.71% sl=59.40 ivz=-2.46 oichg=-1.10 st_dir=-1 skip_hard_sl=False
+12:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:38:00  INFO   BAR  195 2026-10-16 12:37:00 call=   88.05 put=  112.30 spot= 23137.00 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=7
+12:38:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=8 close=69.00 entry=79.40 pnl=-13.10% sl=59.40 ivz=-1.68 oichg=-1.05 st_dir=-1 skip_hard_sl=False
+12:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:39:00  INFO   BAR  196 2026-10-16 12:38:00 call=   88.75 put=  112.60 spot= 23137.45 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=8
+12:39:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=9 close=69.75 entry=79.40 pnl=-12.15% sl=59.40 ivz=-1.17 oichg=-1.57 st_dir=-1 skip_hard_sl=False
+12:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:40:00  INFO   BAR  197 2026-10-16 12:39:00 call=   87.50 put=  113.90 spot= 23133.85 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=9
+12:40:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=10 close=70.30 entry=79.40 pnl=-11.46% sl=59.40 ivz=-1.34 oichg=-0.31 st_dir=-1 skip_hard_sl=False
+12:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:41:00  INFO   BAR  198 2026-10-16 12:40:00 call=   85.75 put=  115.75 spot= 23131.15 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=10
+12:41:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=11 close=71.85 entry=79.40 pnl=-9.51% sl=59.40 ivz=-0.99 oichg=-0.74 st_dir=-1 skip_hard_sl=False
+12:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:42:00  INFO   BAR  199 2026-10-16 12:41:00 call=   85.40 put=  116.60 spot= 23130.10 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=11
+12:42:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=12 close=72.80 entry=79.40 pnl=-8.31% sl=59.40 ivz=-0.69 oichg=0.86 st_dir=-1 skip_hard_sl=False
+12:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:43:00  INFO   BAR  200 2026-10-16 12:42:00 call=   85.50 put=  116.30 spot= 23128.40 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=12
+12:43:00  INFO     [GRID] legs with live price: 42/42
+12:43:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=13 close=72.15 entry=79.40 pnl=-9.13% sl=59.40 ivz=-1.09 oichg=0.31 st_dir=-1 skip_hard_sl=False
+12:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:44:00  INFO   BAR  201 2026-10-16 12:43:00 call=   85.10 put=  116.50 spot= 23126.95 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=13
+12:44:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=14 close=72.45 entry=79.40 pnl=-8.75% sl=59.40 ivz=-1.08 oichg=-0.30 st_dir=-1 skip_hard_sl=False
+12:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:45:00  INFO   ATM roll 23150 -> 23100  spot=23122.95
+12:45:00  INFO   BAR  202 2026-10-16 12:44:00 call=  108.00 put=   93.00 spot= 23122.95 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=14
+12:45:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=15 close=72.75 entry=79.40 pnl=-8.38% sl=59.40 ivz=-1.44 oichg=0.14 st_dir=-1 skip_hard_sl=False
+12:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:46:00  INFO   ATM roll 23100 -> 23150  spot=23126.85
+12:46:00  INFO   BAR  203 2026-10-16 12:45:00 call=   86.00 put=  114.25 spot= 23126.85 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=15
+12:46:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=16 close=70.70 entry=79.40 pnl=-10.96% sl=59.40 ivz=-1.57 oichg=0.33 st_dir=-1 skip_hard_sl=False
+12:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:47:00  INFO   BAR  204 2026-10-16 12:46:00 call=   85.75 put=  115.00 spot= 23130.50 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=16
+12:47:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=17 close=70.95 entry=79.40 pnl=-10.64% sl=59.40 ivz=-0.80 oichg=-0.09 st_dir=-1 skip_hard_sl=False
+12:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:48:00  INFO   BAR  205 2026-10-16 12:47:00 call=   85.05 put=  115.60 spot= 23130.30 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=17
+12:48:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=18 close=71.35 entry=79.40 pnl=-10.14% sl=59.40 ivz=-0.57 oichg=0.21 st_dir=-1 skip_hard_sl=False
+12:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:49:00  INFO   BAR  206 2026-10-16 12:48:00 call=   87.70 put=  111.45 spot= 23134.30 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=18
+12:49:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=19 close=68.20 entry=79.40 pnl=-14.11% sl=59.40 ivz=-1.47 oichg=-0.25 st_dir=-1 skip_hard_sl=False
+12:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:50:00  INFO   BAR  207 2026-10-16 12:49:00 call=   84.05 put=  115.80 spot= 23131.20 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=19
+12:50:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=20 close=71.95 entry=79.40 pnl=-9.38% sl=59.40 ivz=0.34 oichg=0.57 st_dir=-1 skip_hard_sl=False
+12:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:51:00  INFO   BAR  208 2026-10-16 12:50:00 call=   81.75 put=  118.65 spot= 23125.75 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=20
+12:51:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=21 close=73.40 entry=79.40 pnl=-7.56% sl=59.40 ivz=0.01 oichg=-0.12 st_dir=-1 skip_hard_sl=False
+12:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:52:00  INFO   BAR  209 2026-10-16 12:51:00 call=   82.80 put=  116.60 spot= 23126.85 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=21
+12:52:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=22 close=72.10 entry=79.40 pnl=-9.19% sl=59.40 ivz=-0.60 oichg=0.41 st_dir=-1 skip_hard_sl=False
+12:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:53:00  INFO   BAR  210 2026-10-16 12:52:00 call=   85.80 put=  112.95 spot= 23130.85 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=22
+12:53:00  INFO     [GRID] legs with live price: 42/42
+12:53:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=23 close=69.30 entry=79.40 pnl=-12.72% sl=59.40 ivz=-1.56 oichg=0.33 st_dir=-1 skip_hard_sl=False
+12:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:54:00  INFO   BAR  211 2026-10-16 12:53:00 call=   84.75 put=  114.75 spot= 23129.90 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=23
+12:54:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=24 close=70.50 entry=79.40 pnl=-11.21% sl=59.40 ivz=-0.75 oichg=0.14 st_dir=-1 skip_hard_sl=False
+12:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:55:00  INFO   BAR  212 2026-10-16 12:54:00 call=   81.05 put=  118.45 spot= 23126.55 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=24
+12:55:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=25 close=73.05 entry=79.40 pnl=-8.00% sl=59.40 ivz=0.49 oichg=-0.05 st_dir=-1 skip_hard_sl=False
+12:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:56:00  INFO   BAR  213 2026-10-16 12:55:00 call=   80.40 put=  118.70 spot= 23125.75 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=25
+12:56:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=26 close=73.15 entry=79.40 pnl=-7.87% sl=59.40 ivz=0.47 oichg=-0.05 st_dir=-1 skip_hard_sl=False
+12:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:57:00  INFO   ATM roll 23150 -> 23100  spot=23114.45
+12:57:00  INFO   BAR  214 2026-10-16 12:56:00 call=   99.65 put=   98.85 spot= 23114.45 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=26
+12:57:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=27 close=77.20 entry=79.40 pnl=-2.77% sl=59.40 ivz=0.15 oichg=0.24 st_dir=-1 skip_hard_sl=False
+12:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:58:00  INFO   BAR  215 2026-10-16 12:57:00 call=   97.00 put=  102.00 spot= 23111.35 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=27
+12:58:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=28 close=80.20 entry=79.40 pnl=1.01% sl=59.40 ivz=1.81 oichg=1.81 st_dir=1 skip_hard_sl=False
+12:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+12:59:00  INFO   BAR  216 2026-10-16 12:58:00 call=   95.65 put=  104.70 spot= 23105.10 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=28
+12:59:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=29 close=82.75 entry=79.40 pnl=4.22% sl=59.40 ivz=1.73 oichg=-0.50 st_dir=1 skip_hard_sl=False
+12:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:00:00  INFO   BAR  217 2026-10-16 12:59:00 call=   90.20 put=  110.70 spot= 23096.95 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=29
+13:00:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=30 close=87.70 entry=79.40 pnl=10.45% sl=59.40 ivz=2.51 oichg=1.25 st_dir=1 skip_hard_sl=False
+13:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:01:00  INFO   BAR  218 2026-10-16 13:00:00 call=   89.00 put=  115.00 spot= 23088.30 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=30
+13:01:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=31 close=91.70 entry=79.40 pnl=15.49% sl=59.40 ivz=2.28 oichg=1.46 st_dir=1 skip_hard_sl=False
+13:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:02:00  INFO   BAR  219 2026-10-16 13:01:00 call=   91.80 put=  110.50 spot= 23099.30 buf=8000/8000 vix=14.4 IN SHORT entry=79.40 bars=31
+13:02:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=32 close=86.80 entry=79.40 pnl=9.32% sl=59.40 ivz=1.87 oichg=4.45 st_dir=1 skip_hard_sl=False
+13:02:00  INFO   EXIT-GATE reason=IV_ZSCORE adx_1m=10.39 pdi=56.7 ndi=43.3 adx_src=call_close nbars=8000 spot_chg_5bar=-0.07%
+13:02:00  INFO   EXIT SHORT    86.80 entry=   79.40 pnl=9.320% IV_ZSCORE bars_held=32 sl=59.40 ivz=1.87 oichg=4.45 sl_method=STATIC_20PTS
+13:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:03:00  INFO   BAR  220 2026-10-16 13:02:00 call=   97.05 put=  104.00 spot= 23108.00 buf=8000/8000 vix=14.4 COOLDOWN=2
+13:03:00  INFO     [GRID] legs with live price: 42/42
+13:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:04:00  INFO   BAR  221 2026-10-16 13:03:00 call=   95.70 put=  104.70 spot= 23104.40 buf=8000/8000 vix=14.4 COOLDOWN=1
+13:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:05:00  INFO   BAR  222 2026-10-16 13:04:00 call=   92.80 put=  107.90 spot= 23101.20 buf=8000/8000 vix=14.4 FLAT
+13:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:06:00  INFO   BAR  223 2026-10-16 13:05:00 call=   96.55 put=  103.35 spot= 23108.95 buf=8000/8000 vix=14.4 FLAT
+13:06:00  INFO   ENTRY-GATE adx_1m=27.45 pdi=63.7 ndi=36.3 adx_src=call_close nbars=8000 spot_chg_5bar=+0.09% revguard=on
+13:06:00  INFO   ENTRY SHORT    81.15 symbol=PAPER_SHORT_23050PE PL=0.087 PS=0.913 conf=0.913 SL=61.15 momscore=4 ATR=4.74 OTM=1 ATM=23100 strike=23050 cost=Rs5275 dist=59pts OI=0 filter=OK
+13:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:07:00  INFO   BAR  224 2026-10-16 13:06:00 call=   97.85 put=  100.65 spot= 23110.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=0
+13:07:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=1 close=79.15 entry=81.15 pnl=-2.46% sl=61.15 ivz=-0.34 oichg=-0.11 st_dir=1 skip_hard_sl=False
+13:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:08:00  INFO   BAR  225 2026-10-16 13:07:00 call=   97.90 put=   99.90 spot= 23113.00 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=1
+13:08:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=2 close=77.85 entry=81.15 pnl=-4.07% sl=61.15 ivz=-0.52 oichg=-0.72 st_dir=1 skip_hard_sl=False
+13:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:09:00  INFO   BAR  226 2026-10-16 13:08:00 call=   98.45 put=   98.85 spot= 23115.55 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=2
+13:09:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=3 close=76.95 entry=81.15 pnl=-5.18% sl=61.15 ivz=-0.56 oichg=0.07 st_dir=1 skip_hard_sl=False
+13:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:10:00  INFO   BAR  227 2026-10-16 13:09:00 call=   98.25 put=   98.75 spot= 23115.75 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=3
+13:10:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=4 close=77.30 entry=81.15 pnl=-4.74% sl=61.15 ivz=-0.26 oichg=-0.13 st_dir=1 skip_hard_sl=False
+13:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:11:00  INFO   BAR  228 2026-10-16 13:10:00 call=  102.00 put=   93.95 spot= 23117.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=4
+13:11:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=5 close=73.20 entry=81.15 pnl=-9.80% sl=61.15 ivz=-2.15 oichg=0.51 st_dir=-1 skip_hard_sl=False
+13:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:12:00  INFO   BAR  229 2026-10-16 13:11:00 call=  101.35 put=   94.85 spot= 23121.55 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=5
+13:12:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=6 close=74.05 entry=81.15 pnl=-8.75% sl=61.15 ivz=-0.73 oichg=-1.00 st_dir=-1 skip_hard_sl=False
+13:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:13:00  INFO   BAR  230 2026-10-16 13:12:00 call=  100.35 put=   96.30 spot= 23120.05 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=6
+13:13:00  INFO     [GRID] legs with live price: 42/42
+13:13:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=7 close=75.25 entry=81.15 pnl=-7.27% sl=61.15 ivz=-0.45 oichg=-0.87 st_dir=-1 skip_hard_sl=False
+13:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:14:00  INFO   BAR  231 2026-10-16 13:13:00 call=   95.75 put=  100.00 spot= 23112.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=7
+13:14:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=8 close=78.75 entry=81.15 pnl=-2.96% sl=61.15 ivz=-0.03 oichg=-0.25 st_dir=-1 skip_hard_sl=False
+13:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:15:00  INFO   BAR  232 2026-10-16 13:14:00 call=   97.90 put=   97.65 spot= 23116.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=8
+13:15:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=9 close=76.35 entry=81.15 pnl=-5.91% sl=61.15 ivz=-0.69 oichg=1.16 st_dir=-1 skip_hard_sl=False
+13:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:16:00  INFO   BAR  233 2026-10-16 13:15:00 call=   96.25 put=   98.25 spot= 23113.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=9
+13:16:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=10 close=77.15 entry=81.15 pnl=-4.93% sl=61.15 ivz=-0.79 oichg=0.80 st_dir=-1 skip_hard_sl=False
+13:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:17:00  INFO   BAR  234 2026-10-16 13:16:00 call=   97.80 put=   96.55 spot= 23117.20 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=10
+13:17:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=11 close=74.90 entry=81.15 pnl=-7.70% sl=61.15 ivz=-1.34 oichg=0.67 st_dir=-1 skip_hard_sl=False
+13:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:18:00  INFO   BAR  235 2026-10-16 13:17:00 call=  101.20 put=   93.00 spot= 23121.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=11
+13:18:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=12 close=72.45 entry=81.15 pnl=-10.72% sl=61.15 ivz=-1.58 oichg=-0.36 st_dir=-1 skip_hard_sl=False
+13:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:19:00  INFO   ATM roll 23100 -> 23150  spot=23125.80
+13:19:00  INFO   BAR  236 2026-10-16 13:18:00 call=   77.40 put=  117.30 spot= 23125.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=12
+13:19:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=13 close=71.65 entry=81.15 pnl=-11.71% sl=61.15 ivz=-1.03 oichg=-1.97 st_dir=-1 skip_hard_sl=False
+13:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:20:00  INFO   BAR  237 2026-10-16 13:19:00 call=   81.40 put=  113.20 spot= 23130.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=13
+13:20:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=14 close=68.75 entry=81.15 pnl=-15.28% sl=61.15 ivz=-1.51 oichg=0.07 st_dir=-1 skip_hard_sl=False
+13:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:21:00  INFO   BAR  238 2026-10-16 13:20:00 call=   82.65 put=  112.25 spot= 23132.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=14
+13:21:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=15 close=68.10 entry=81.15 pnl=-16.08% sl=61.15 ivz=-1.40 oichg=-2.49 st_dir=-1 skip_hard_sl=False
+13:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:22:00  INFO   BAR  239 2026-10-16 13:21:00 call=   82.80 put=  111.90 spot= 23135.15 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=15
+13:22:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=16 close=68.00 entry=81.15 pnl=-16.20% sl=61.15 ivz=-0.79 oichg=-0.25 st_dir=-1 skip_hard_sl=False
+13:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:23:00  INFO   BAR  240 2026-10-16 13:22:00 call=   83.75 put=  110.55 spot= 23137.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=16
+13:23:00  INFO     [GRID] legs with live price: 42/42
+13:23:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=17 close=66.90 entry=81.15 pnl=-17.56% sl=61.15 ivz=-0.92 oichg=0.45 st_dir=-1 skip_hard_sl=False
+13:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:24:00  INFO   BAR  241 2026-10-16 13:23:00 call=   83.10 put=  111.30 spot= 23133.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=17
+13:24:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=18 close=68.05 entry=81.15 pnl=-16.14% sl=61.15 ivz=-0.93 oichg=-0.68 st_dir=-1 skip_hard_sl=False
+13:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:25:00  INFO   BAR  242 2026-10-16 13:24:00 call=   78.75 put=  115.50 spot= 23131.10 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=18
+13:25:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=19 close=70.70 entry=81.15 pnl=-12.88% sl=61.15 ivz=0.49 oichg=0.83 st_dir=-1 skip_hard_sl=False
+13:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:26:00  INFO   BAR  243 2026-10-16 13:25:00 call=   81.05 put=  112.65 spot= 23132.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=19
+13:26:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=20 close=68.60 entry=81.15 pnl=-15.47% sl=61.15 ivz=-0.78 oichg=0.88 st_dir=-1 skip_hard_sl=False
+13:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:27:00  INFO   BAR  244 2026-10-16 13:26:00 call=   78.90 put=  115.40 spot= 23128.25 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=20
+13:27:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=21 close=70.55 entry=81.15 pnl=-13.06% sl=61.15 ivz=-0.34 oichg=0.74 st_dir=-1 skip_hard_sl=False
+13:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:28:00  INFO   BAR  245 2026-10-16 13:27:00 call=   79.10 put=  114.25 spot= 23128.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=21
+13:28:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=22 close=69.90 entry=81.15 pnl=-13.86% sl=61.15 ivz=-0.73 oichg=0.44 st_dir=-1 skip_hard_sl=False
+13:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:29:00  INFO   BAR  246 2026-10-16 13:28:00 call=   76.35 put=  116.50 spot= 23127.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=22
+13:29:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=23 close=70.80 entry=81.15 pnl=-12.75% sl=61.15 ivz=-0.27 oichg=0.75 st_dir=-1 skip_hard_sl=False
+13:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:30:00  INFO   ATM roll 23150 -> 23100  spot=23123.95
+13:30:00  INFO   BAR  247 2026-10-16 13:29:00 call=  100.15 put=   91.55 spot= 23123.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=23
+13:30:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=24 close=70.85 entry=81.15 pnl=-12.69% sl=61.15 ivz=-1.33 oichg=0.34 st_dir=-1 skip_hard_sl=False
+13:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:31:00  INFO   BAR  248 2026-10-16 13:30:00 call=  101.35 put=   91.00 spot= 23124.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=24
+13:31:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=25 close=70.45 entry=81.15 pnl=-13.19% sl=61.15 ivz=-1.59 oichg=-0.00 st_dir=-1 skip_hard_sl=False
+13:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:32:00  INFO   ATM roll 23100 -> 23150  spot=23126.90
+13:32:00  INFO   BAR  249 2026-10-16 13:31:00 call=   78.75 put=  114.10 spot= 23126.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=25
+13:32:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=26 close=68.80 entry=81.15 pnl=-15.22% sl=61.15 ivz=-1.96 oichg=0.11 st_dir=-1 skip_hard_sl=False
+13:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:33:00  INFO   BAR  250 2026-10-16 13:32:00 call=   81.85 put=  110.55 spot= 23132.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=26
+13:33:00  INFO     [GRID] legs with live price: 42/42
+13:33:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=27 close=66.50 entry=81.15 pnl=-18.05% sl=61.15 ivz=-1.92 oichg=0.07 st_dir=-1 skip_hard_sl=False
+13:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:34:00  INFO   BAR  251 2026-10-16 13:33:00 call=   83.60 put=  107.30 spot= 23134.85 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=27
+13:34:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=28 close=64.40 entry=81.15 pnl=-20.64% sl=61.15 ivz=-2.62 oichg=-2.06 st_dir=-1 skip_hard_sl=False
+13:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:35:00  INFO   BAR  252 2026-10-16 13:34:00 call=   84.60 put=  106.25 spot= 23136.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=28
+13:35:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=29 close=63.65 entry=81.15 pnl=-21.57% sl=61.15 ivz=-2.26 oichg=-0.64 st_dir=-1 skip_hard_sl=False
+13:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:36:00  INFO   BAR  253 2026-10-16 13:35:00 call=   83.40 put=  107.30 spot= 23135.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=29
+13:36:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=30 close=64.55 entry=81.15 pnl=-20.46% sl=61.15 ivz=-1.64 oichg=0.27 st_dir=-1 skip_hard_sl=False
+13:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:37:00  INFO   BAR  254 2026-10-16 13:36:00 call=   82.70 put=  108.40 spot= 23135.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=30
+13:37:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=31 close=64.90 entry=81.15 pnl=-20.02% sl=61.15 ivz=-1.16 oichg=-0.29 st_dir=-1 skip_hard_sl=False
+13:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:38:00  INFO   BAR  255 2026-10-16 13:37:00 call=   81.80 put=  108.85 spot= 23133.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=31
+13:38:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=32 close=65.70 entry=81.15 pnl=-19.04% sl=61.15 ivz=-1.13 oichg=0.77 st_dir=-1 skip_hard_sl=False
+13:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:39:00  INFO   BAR  256 2026-10-16 13:38:00 call=   80.85 put=  110.00 spot= 23132.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=32
+13:39:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=33 close=66.25 entry=81.15 pnl=-18.36% sl=61.15 ivz=-0.83 oichg=0.39 st_dir=-1 skip_hard_sl=False
+13:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:40:00  INFO   BAR  257 2026-10-16 13:39:00 call=   81.75 put=  109.05 spot= 23132.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=33
+13:40:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=34 close=65.45 entry=81.15 pnl=-19.35% sl=61.15 ivz=-1.25 oichg=-0.20 st_dir=-1 skip_hard_sl=False
+13:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:41:00  INFO   BAR  258 2026-10-16 13:40:00 call=   83.90 put=  106.30 spot= 23135.20 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=34
+13:41:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=35 close=63.90 entry=81.15 pnl=-21.26% sl=61.15 ivz=-1.51 oichg=1.11 st_dir=-1 skip_hard_sl=False
+13:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:42:00  INFO   BAR  259 2026-10-16 13:41:00 call=   83.80 put=  106.30 spot= 23137.25 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=35
+13:42:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=36 close=63.30 entry=81.15 pnl=-22.00% sl=61.15 ivz=-1.28 oichg=0.50 st_dir=-1 skip_hard_sl=False
+13:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:43:00  INFO   BAR  260 2026-10-16 13:42:00 call=   78.90 put=  110.95 spot= 23131.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=36
+13:43:00  INFO     [GRID] legs with live price: 42/42
+13:43:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=37 close=66.95 entry=81.15 pnl=-17.50% sl=61.15 ivz=-0.06 oichg=0.35 st_dir=-1 skip_hard_sl=False
+13:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:44:00  INFO   BAR  261 2026-10-16 13:43:00 call=   79.60 put=  111.35 spot= 23128.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=37
+13:44:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=38 close=67.10 entry=81.15 pnl=-17.31% sl=61.15 ivz=-0.72 oichg=1.14 st_dir=-1 skip_hard_sl=False
+13:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:45:00  INFO   BAR  262 2026-10-16 13:44:00 call=   78.45 put=  112.25 spot= 23130.05 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=38
+13:45:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=39 close=67.70 entry=81.15 pnl=-16.57% sl=61.15 ivz=0.23 oichg=1.13 st_dir=-1 skip_hard_sl=False
+13:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:46:00  INFO   ATM roll 23150 -> 23100  spot=23120.95
+13:46:00  INFO   BAR  263 2026-10-16 13:45:00 call=   99.90 put=   90.65 spot= 23120.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=39
+13:46:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=40 close=70.30 entry=81.15 pnl=-13.37% sl=61.15 ivz=-0.29 oichg=0.08 st_dir=-1 skip_hard_sl=False
+13:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:47:00  INFO   BAR  264 2026-10-16 13:46:00 call=  100.10 put=   89.75 spot= 23122.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=40
+13:47:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=41 close=69.65 entry=81.15 pnl=-14.17% sl=61.15 ivz=-0.11 oichg=1.04 st_dir=-1 skip_hard_sl=False
+13:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:48:00  INFO   ATM roll 23100 -> 23150  spot=23127.50
+13:48:00  INFO   BAR  265 2026-10-16 13:47:00 call=   79.35 put=  110.35 spot= 23127.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=41
+13:48:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=42 close=66.15 entry=81.15 pnl=-18.48% sl=61.15 ivz=-1.68 oichg=-0.72 st_dir=-1 skip_hard_sl=False
+13:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:49:00  INFO   ATM roll 23150 -> 23100  spot=23122.45
+13:49:00  INFO   BAR  266 2026-10-16 13:48:00 call=  100.50 put=   89.30 spot= 23122.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=42
+13:49:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=43 close=69.20 entry=81.15 pnl=-14.73% sl=61.15 ivz=-0.43 oichg=-0.19 st_dir=-1 skip_hard_sl=False
+13:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:50:00  INFO   BAR  267 2026-10-16 13:49:00 call=   98.35 put=   90.75 spot= 23119.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=43
+13:50:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=44 close=70.05 entry=81.15 pnl=-13.68% sl=61.15 ivz=-0.44 oichg=1.86 st_dir=-1 skip_hard_sl=False
+13:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:51:00  INFO   ATM roll 23100 -> 23150  spot=23125.45
+13:51:00  INFO   BAR  268 2026-10-16 13:50:00 call=   78.25 put=  111.75 spot= 23125.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=44
+13:51:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=45 close=67.10 entry=81.15 pnl=-17.31% sl=61.15 ivz=-1.55 oichg=0.82 st_dir=-1 skip_hard_sl=False
+13:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:52:00  INFO   ATM roll 23150 -> 23100  spot=23123.25
+13:52:00  INFO   BAR  269 2026-10-16 13:51:00 call=  102.40 put=   87.80 spot= 23123.25 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=45
+13:52:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=46 close=67.50 entry=81.15 pnl=-16.82% sl=61.15 ivz=-1.86 oichg=-1.32 st_dir=-1 skip_hard_sl=False
+13:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:53:00  INFO   ATM roll 23100 -> 23150  spot=23127.50
+13:53:00  INFO   BAR  270 2026-10-16 13:52:00 call=   79.60 put=  109.25 spot= 23127.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=46
+13:53:00  INFO     [GRID] legs with live price: 42/42
+13:53:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=47 close=65.15 entry=81.15 pnl=-19.72% sl=61.15 ivz=-2.37 oichg=-0.18 st_dir=-1 skip_hard_sl=False
+13:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:54:00  INFO   BAR  271 2026-10-16 13:53:00 call=   80.30 put=  108.40 spot= 23128.55 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=47
+13:54:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=48 close=65.05 entry=81.15 pnl=-19.84% sl=61.15 ivz=-1.78 oichg=-0.21 st_dir=-1 skip_hard_sl=False
+13:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:55:00  INFO   ATM roll 23150 -> 23100  spot=23122.65
+13:55:00  INFO   BAR  272 2026-10-16 13:54:00 call=  102.25 put=   87.00 spot= 23122.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=48
+13:55:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=49 close=67.15 entry=81.15 pnl=-17.25% sl=61.15 ivz=-1.63 oichg=0.02 st_dir=-1 skip_hard_sl=False
+13:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:56:00  INFO   ATM roll 23100 -> 23150  spot=23126.90
+13:56:00  INFO   BAR  273 2026-10-16 13:55:00 call=   79.75 put=  109.15 spot= 23126.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=49
+13:56:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=50 close=65.45 entry=81.15 pnl=-19.35% sl=61.15 ivz=-1.55 oichg=-0.59 st_dir=-1 skip_hard_sl=False
+13:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:57:00  INFO   BAR  274 2026-10-16 13:56:00 call=   82.15 put=  105.65 spot= 23133.10 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=50
+13:57:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=51 close=62.80 entry=81.15 pnl=-22.61% sl=61.15 ivz=-1.70 oichg=-0.67 st_dir=-1 skip_hard_sl=False
+13:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:58:00  INFO   BAR  275 2026-10-16 13:57:00 call=   79.80 put=  108.30 spot= 23132.15 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=51
+13:58:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=52 close=64.75 entry=81.15 pnl=-20.21% sl=61.15 ivz=-0.19 oichg=-0.21 st_dir=-1 skip_hard_sl=False
+13:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+13:59:04  INFO   BAR  276 2026-10-16 13:58:00 call=   78.50 put=  108.75 spot= 23133.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=52
+13:59:04  INFO     [EXIT-CHECK] signal=SHORT bar_held=53 close=65.00 entry=81.15 pnl=-19.90% sl=61.15 ivz=0.58 oichg=-0.09 st_dir=-1 skip_hard_sl=False
+13:59:04  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:00:00  INFO   BAR  277 2026-10-16 13:59:00 call=   76.05 put=  112.10 spot= 23127.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=53
+14:00:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=54 close=67.40 entry=81.15 pnl=-16.94% sl=61.15 ivz=0.72 oichg=0.01 st_dir=-1 skip_hard_sl=False
+14:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:01:00  INFO   BAR  278 2026-10-16 14:00:00 call=   75.50 put=  113.00 spot= 23126.85 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=54
+14:01:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=55 close=67.75 entry=81.15 pnl=-16.51% sl=61.15 ivz=0.79 oichg=0.52 st_dir=-1 skip_hard_sl=False
+14:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:02:00  INFO   ATM roll 23150 -> 23100  spot=23120.45
+14:02:00  INFO   BAR  279 2026-10-16 14:01:00 call=   98.70 put=   90.40 spot= 23120.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=55
+14:02:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=56 close=69.50 entry=81.15 pnl=-14.36% sl=61.15 ivz=0.22 oichg=0.75 st_dir=-1 skip_hard_sl=False
+14:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:03:00  INFO   BAR  280 2026-10-16 14:02:00 call=   93.85 put=   94.15 spot= 23113.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=56
+14:03:00  INFO     [GRID] legs with live price: 42/42
+14:03:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=57 close=72.65 entry=81.15 pnl=-10.47% sl=61.15 ivz=0.72 oichg=0.40 st_dir=1 skip_hard_sl=False
+14:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:04:00  INFO   BAR  281 2026-10-16 14:03:00 call=   98.10 put=   91.25 spot= 23118.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=57
+14:04:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=58 close=70.85 entry=81.15 pnl=-12.69% sl=61.15 ivz=0.91 oichg=2.02 st_dir=1 skip_hard_sl=False
+14:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:05:00  INFO   BAR  282 2026-10-16 14:04:00 call=   95.35 put=   92.45 spot= 23115.20 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=58
+14:05:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=59 close=71.85 entry=81.15 pnl=-11.46% sl=61.15 ivz=0.74 oichg=-1.36 st_dir=1 skip_hard_sl=False
+14:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:06:00  INFO   BAR  283 2026-10-16 14:05:00 call=   96.75 put=   91.30 spot= 23116.75 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=59
+14:06:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=60 close=70.35 entry=81.15 pnl=-13.31% sl=61.15 ivz=-0.10 oichg=0.86 st_dir=1 skip_hard_sl=False
+14:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:07:00  INFO   BAR  284 2026-10-16 14:06:00 call=   93.70 put=   93.80 spot= 23113.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=60
+14:07:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=61 close=72.70 entry=81.15 pnl=-10.41% sl=61.15 ivz=1.24 oichg=0.50 st_dir=1 skip_hard_sl=False
+14:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:08:00  INFO   BAR  285 2026-10-16 14:07:00 call=   89.30 put=   98.55 spot= 23106.75 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=61
+14:08:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=62 close=76.75 entry=81.15 pnl=-5.42% sl=61.15 ivz=2.13 oichg=-0.29 st_dir=1 skip_hard_sl=False
+14:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:09:00  INFO   BAR  286 2026-10-16 14:08:00 call=   90.05 put=   98.95 spot= 23102.55 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=62
+14:09:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=63 close=77.00 entry=81.15 pnl=-5.11% sl=61.15 ivz=0.81 oichg=-0.90 st_dir=1 skip_hard_sl=False
+14:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:10:00  INFO   BAR  287 2026-10-16 14:09:00 call=   91.75 put=   96.80 spot= 23105.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=63
+14:10:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=64 close=75.35 entry=81.15 pnl=-7.15% sl=61.15 ivz=0.49 oichg=-0.87 st_dir=1 skip_hard_sl=False
+14:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:11:00  INFO   BAR  288 2026-10-16 14:10:00 call=   93.80 put=   94.50 spot= 23110.40 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=64
+14:11:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=65 close=73.15 entry=81.15 pnl=-9.86% sl=61.15 ivz=0.12 oichg=-1.14 st_dir=1 skip_hard_sl=False
+14:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:12:00  INFO   BAR  289 2026-10-16 14:11:00 call=   93.35 put=   93.15 spot= 23108.85 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=65
+14:12:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=66 close=72.20 entry=81.15 pnl=-11.03% sl=61.15 ivz=-1.24 oichg=0.34 st_dir=1 skip_hard_sl=False
+14:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:13:00  INFO   BAR  290 2026-10-16 14:12:00 call=   91.60 put=   94.60 spot= 23107.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=66
+14:13:00  INFO     [GRID] legs with live price: 42/42
+14:13:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=67 close=73.00 entry=81.15 pnl=-10.04% sl=61.15 ivz=-0.91 oichg=0.54 st_dir=1 skip_hard_sl=False
+14:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:14:00  INFO   BAR  291 2026-10-16 14:13:00 call=   89.10 put=   97.45 spot= 23104.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=67
+14:14:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=68 close=75.65 entry=81.15 pnl=-6.78% sl=61.15 ivz=0.24 oichg=0.56 st_dir=1 skip_hard_sl=False
+14:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:15:00  INFO   BAR  292 2026-10-16 14:14:00 call=   92.30 put=   92.50 spot= 23110.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=68
+14:15:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=69 close=71.40 entry=81.15 pnl=-12.01% sl=61.15 ivz=-1.46 oichg=-0.13 st_dir=1 skip_hard_sl=False
+14:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:16:00  INFO   BAR  293 2026-10-16 14:15:00 call=   88.70 put=   96.45 spot= 23104.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=69
+14:16:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=70 close=74.60 entry=81.15 pnl=-8.07% sl=61.15 ivz=-0.68 oichg=0.37 st_dir=1 skip_hard_sl=False
+14:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:17:00  INFO   BAR  294 2026-10-16 14:16:00 call=   85.75 put=   98.90 spot= 23100.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=70
+14:17:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=71 close=76.60 entry=81.15 pnl=-5.61% sl=61.15 ivz=-0.66 oichg=1.61 st_dir=1 skip_hard_sl=False
+14:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:18:00  INFO   BAR  295 2026-10-16 14:17:00 call=   90.35 put=   93.50 spot= 23106.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=71
+14:18:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=72 close=71.95 entry=81.15 pnl=-11.34% sl=61.15 ivz=-2.55 oichg=1.18 st_dir=1 skip_hard_sl=False
+14:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:19:00  INFO   BAR  296 2026-10-16 14:18:00 call=   93.80 put=   88.60 spot= 23108.75 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=72
+14:19:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=73 close=68.00 entry=81.15 pnl=-16.20% sl=61.15 ivz=-3.31 oichg=-1.46 st_dir=-1 skip_hard_sl=False
+14:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:20:00  INFO   BAR  297 2026-10-16 14:19:00 call=   90.55 put=   92.15 spot= 23104.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=73
+14:20:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=74 close=71.35 entry=81.15 pnl=-12.08% sl=61.15 ivz=-1.90 oichg=1.89 st_dir=-1 skip_hard_sl=False
+14:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:21:00  INFO   BAR  298 2026-10-16 14:20:00 call=   86.25 put=   98.10 spot= 23097.25 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=74
+14:21:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=75 close=76.00 entry=81.15 pnl=-6.35% sl=61.15 ivz=-0.86 oichg=2.51 st_dir=-1 skip_hard_sl=False
+14:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:22:00  INFO   BAR  299 2026-10-16 14:21:00 call=   87.65 put=   96.85 spot= 23098.20 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=75
+14:22:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=76 close=74.90 entry=81.15 pnl=-7.70% sl=61.15 ivz=-1.13 oichg=2.80 st_dir=-1 skip_hard_sl=False
+14:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:23:00  INFO   BAR  300 2026-10-16 14:22:00 call=   87.20 put=   96.65 spot= 23097.10 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=76
+14:23:00  INFO     [GRID] legs with live price: 42/42
+14:23:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=77 close=74.80 entry=81.15 pnl=-7.83% sl=61.15 ivz=-1.27 oichg=0.98 st_dir=-1 skip_hard_sl=False
+14:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:24:00  INFO   BAR  301 2026-10-16 14:23:00 call=   79.00 put=  104.75 spot= 23087.55 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=77
+14:24:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=78 close=80.30 entry=81.15 pnl=-1.05% sl=61.15 ivz=-0.40 oichg=2.88 st_dir=-1 skip_hard_sl=False
+14:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:25:00  INFO   BAR  302 2026-10-16 14:24:00 call=   77.75 put=  104.80 spot= 23081.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=78
+14:25:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=79 close=80.40 entry=81.15 pnl=-0.92% sl=61.15 ivz=-1.54 oichg=1.12 st_dir=-1 skip_hard_sl=False
+14:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:26:00  INFO   BAR  303 2026-10-16 14:25:00 call=   82.10 put=  100.45 spot= 23092.05 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=79
+14:26:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=80 close=77.90 entry=81.15 pnl=-4.00% sl=61.15 ivz=-0.46 oichg=0.22 st_dir=-1 skip_hard_sl=False
+14:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:27:00  INFO   BAR  304 2026-10-16 14:26:00 call=   79.65 put=  103.75 spot= 23085.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=80
+14:27:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=81 close=79.95 entry=81.15 pnl=-1.48% sl=61.15 ivz=-0.72 oichg=0.47 st_dir=-1 skip_hard_sl=False
+14:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:28:00  INFO   BAR  305 2026-10-16 14:27:00 call=   73.65 put=  110.50 spot= 23075.00 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=81
+14:28:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=82 close=86.05 entry=81.15 pnl=6.04% sl=61.15 ivz=0.21 oichg=0.20 st_dir=1 skip_hard_sl=False
+14:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:29:00  INFO   BAR  306 2026-10-16 14:28:00 call=   78.35 put=  105.75 spot= 23081.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=82
+14:29:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=83 close=82.25 entry=81.15 pnl=1.36% sl=61.15 ivz=-0.19 oichg=0.48 st_dir=1 skip_hard_sl=False
+14:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:30:00  INFO   BAR  307 2026-10-16 14:29:00 call=   81.10 put=  102.10 spot= 23085.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=83
+14:30:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=84 close=83.50 entry=81.15 pnl=2.90% sl=61.15 ivz=1.56 oichg=1.00 st_dir=1 skip_hard_sl=False
+14:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:31:00  INFO   BAR  308 2026-10-16 14:30:00 call=   78.90 put=  105.10 spot= 23085.75 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=84
+14:31:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=85 close=81.55 entry=81.15 pnl=0.49% sl=61.15 ivz=0.51 oichg=-0.13 st_dir=1 skip_hard_sl=False
+14:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:32:00  INFO   BAR  309 2026-10-16 14:31:00 call=   82.25 put=  100.45 spot= 23092.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=85
+14:32:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=86 close=77.65 entry=81.15 pnl=-4.31% sl=61.15 ivz=-0.13 oichg=-4.67 st_dir=1 skip_hard_sl=False
+14:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:33:00  INFO   BAR  310 2026-10-16 14:32:00 call=   77.95 put=  105.85 spot= 23085.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=86
+14:33:00  INFO     [GRID] legs with live price: 42/42
+14:33:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=87 close=82.50 entry=81.15 pnl=1.66% sl=61.15 ivz=1.11 oichg=-0.09 st_dir=1 skip_hard_sl=False
+14:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:34:00  INFO   BAR  311 2026-10-16 14:33:00 call=   79.50 put=  103.45 spot= 23086.15 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=87
+14:34:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=88 close=80.10 entry=81.15 pnl=-1.29% sl=61.15 ivz=-0.22 oichg=2.27 st_dir=1 skip_hard_sl=False
+14:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:35:00  INFO   BAR  312 2026-10-16 14:34:00 call=   77.20 put=  104.35 spot= 23086.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=88
+14:35:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=89 close=81.10 entry=81.15 pnl=-0.06% sl=61.15 ivz=0.62 oichg=1.61 st_dir=1 skip_hard_sl=False
+14:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:36:00  INFO   BAR  313 2026-10-16 14:35:00 call=   73.60 put=  108.00 spot= 23080.00 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=89
+14:36:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=90 close=83.65 entry=81.15 pnl=3.08% sl=61.15 ivz=0.48 oichg=1.04 st_dir=1 skip_hard_sl=False
+14:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:37:00  INFO   BAR  314 2026-10-16 14:36:00 call=   73.75 put=  107.50 spot= 23081.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=90
+14:37:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=91 close=83.00 entry=81.15 pnl=2.28% sl=61.15 ivz=0.49 oichg=1.13 st_dir=1 skip_hard_sl=False
+14:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:38:00  INFO   BAR  315 2026-10-16 14:37:00 call=   73.00 put=  107.50 spot= 23077.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=91
+14:38:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=92 close=83.05 entry=81.15 pnl=2.34% sl=61.15 ivz=-0.63 oichg=0.65 st_dir=1 skip_hard_sl=False
+14:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:39:00  INFO   BAR  316 2026-10-16 14:38:00 call=   75.15 put=  105.60 spot= 23080.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=92
+14:39:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=93 close=81.65 entry=81.15 pnl=0.62% sl=61.15 ivz=-0.93 oichg=-0.09 st_dir=1 skip_hard_sl=False
+14:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:40:00  INFO   BAR  317 2026-10-16 14:39:00 call=   77.25 put=  103.00 spot= 23083.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=93
+14:40:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=94 close=79.85 entry=81.15 pnl=-1.60% sl=61.15 ivz=-1.31 oichg=-0.54 st_dir=1 skip_hard_sl=False
+14:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:41:00  INFO   BAR  318 2026-10-16 14:40:00 call=   80.95 put=   98.75 spot= 23089.25 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=94
+14:41:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=95 close=74.90 entry=81.15 pnl=-7.70% sl=61.15 ivz=-2.72 oichg=-3.59 st_dir=1 skip_hard_sl=False
+14:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:42:00  INFO   BAR  319 2026-10-16 14:41:00 call=   77.20 put=  101.30 spot= 23084.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=95
+14:42:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=96 close=78.35 entry=81.15 pnl=-3.45% sl=61.15 ivz=-1.51 oichg=-0.79 st_dir=1 skip_hard_sl=False
+14:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:43:00  INFO   BAR  320 2026-10-16 14:42:00 call=   80.00 put=   97.15 spot= 23088.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=96
+14:43:00  INFO     [GRID] legs with live price: 42/42
+14:43:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=97 close=74.70 entry=81.15 pnl=-7.95% sl=61.15 ivz=-2.32 oichg=0.15 st_dir=1 skip_hard_sl=False
+14:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:44:00  INFO   BAR  321 2026-10-16 14:43:00 call=   83.40 put=   93.65 spot= 23091.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=97
+14:44:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=98 close=73.45 entry=81.15 pnl=-9.49% sl=61.15 ivz=-1.89 oichg=-1.45 st_dir=1 skip_hard_sl=False
+14:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:45:00  INFO   BAR  322 2026-10-16 14:44:00 call=   83.80 put=   93.50 spot= 23094.75 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=98
+14:45:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=99 close=72.10 entry=81.15 pnl=-11.15% sl=61.15 ivz=-1.77 oichg=-3.43 st_dir=1 skip_hard_sl=False
+14:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:46:00  INFO   BAR  323 2026-10-16 14:45:00 call=   84.20 put=   93.25 spot= 23096.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=99
+14:46:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=100 close=71.60 entry=81.15 pnl=-11.77% sl=61.15 ivz=-1.42 oichg=-0.15 st_dir=1 skip_hard_sl=False
+14:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:47:00  INFO   BAR  324 2026-10-16 14:46:00 call=   88.25 put=   89.85 spot= 23101.85 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=100
+14:47:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=101 close=68.55 entry=81.15 pnl=-15.53% sl=61.15 ivz=-1.66 oichg=-3.14 st_dir=-1 skip_hard_sl=False
+14:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:48:00  INFO   BAR  325 2026-10-16 14:47:00 call=   92.70 put=   84.80 spot= 23107.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=101
+14:48:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=102 close=64.35 entry=81.15 pnl=-20.70% sl=61.15 ivz=-2.11 oichg=-1.85 st_dir=-1 skip_hard_sl=False
+14:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:49:00  INFO   BAR  326 2026-10-16 14:48:00 call=   92.70 put=   85.45 spot= 23108.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=102
+14:49:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=103 close=64.70 entry=81.15 pnl=-20.27% sl=61.15 ivz=-1.59 oichg=0.42 st_dir=-1 skip_hard_sl=False
+14:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:50:00  INFO   BAR  327 2026-10-16 14:49:00 call=   91.00 put=   86.60 spot= 23108.20 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=103
+14:50:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=104 close=65.90 entry=81.15 pnl=-18.79% sl=61.15 ivz=-1.10 oichg=0.14 st_dir=-1 skip_hard_sl=False
+14:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:51:00  INFO   BAR  328 2026-10-16 14:50:00 call=   91.45 put=   86.70 spot= 23109.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=104
+14:51:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=105 close=65.75 entry=81.15 pnl=-18.98% sl=61.15 ivz=-0.87 oichg=-1.01 st_dir=-1 skip_hard_sl=False
+14:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:52:00  INFO   BAR  329 2026-10-16 14:51:00 call=   90.40 put=   87.20 spot= 23108.10 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=105
+14:52:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=106 close=66.75 entry=81.15 pnl=-17.74% sl=61.15 ivz=-0.62 oichg=-0.21 st_dir=-1 skip_hard_sl=False
+14:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:53:00  INFO   BAR  330 2026-10-16 14:52:00 call=   86.55 put=   91.25 spot= 23106.15 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=106
+14:53:00  INFO     [GRID] legs with live price: 42/42
+14:53:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=107 close=69.35 entry=81.15 pnl=-14.54% sl=61.15 ivz=0.18 oichg=0.87 st_dir=-1 skip_hard_sl=False
+14:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:54:00  INFO   BAR  331 2026-10-16 14:53:00 call=   88.25 put=   89.55 spot= 23104.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=107
+14:54:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=108 close=67.95 entry=81.15 pnl=-16.27% sl=61.15 ivz=-0.59 oichg=0.67 st_dir=-1 skip_hard_sl=False
+14:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:55:00  INFO   BAR  332 2026-10-16 14:54:00 call=   88.45 put=   88.95 spot= 23106.10 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=108
+14:55:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=109 close=67.95 entry=81.15 pnl=-16.27% sl=61.15 ivz=-0.23 oichg=-0.12 st_dir=-1 skip_hard_sl=False
+14:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:56:00  INFO   BAR  333 2026-10-16 14:55:00 call=   83.40 put=   93.20 spot= 23101.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=109
+14:56:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=110 close=71.45 entry=81.15 pnl=-11.95% sl=61.15 ivz=0.78 oichg=-0.21 st_dir=-1 skip_hard_sl=False
+14:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:57:00  INFO   BAR  334 2026-10-16 14:56:00 call=   80.90 put=   95.75 spot= 23095.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=110
+14:57:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=111 close=73.45 entry=81.15 pnl=-9.49% sl=61.15 ivz=0.74 oichg=0.49 st_dir=-1 skip_hard_sl=False
+14:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:58:00  INFO   BAR  335 2026-10-16 14:57:00 call=   77.40 put=   99.90 spot= 23084.25 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=111
+14:58:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=112 close=76.85 entry=81.15 pnl=-5.30% sl=61.15 ivz=0.02 oichg=0.51 st_dir=-1 skip_hard_sl=False
+14:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+14:59:00  INFO   BAR  336 2026-10-16 14:58:00 call=   78.15 put=  100.40 spot= 23083.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=112
+14:59:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=113 close=77.40 entry=81.15 pnl=-4.62% sl=61.15 ivz=0.43 oichg=-0.37 st_dir=1 skip_hard_sl=False
+14:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:00:00  INFO   BAR  337 2026-10-16 14:59:00 call=   77.90 put=  102.55 spot= 23080.05 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=113
+15:00:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=114 close=79.30 entry=81.15 pnl=-2.28% sl=61.15 ivz=0.74 oichg=-1.96 st_dir=1 skip_hard_sl=False
+15:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:01:00  INFO   BAR  338 2026-10-16 15:00:00 call=   81.00 put=   99.15 spot= 23090.90 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=114
+15:01:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=115 close=76.25 entry=81.15 pnl=-6.04% sl=61.15 ivz=1.72 oichg=-4.36 st_dir=1 skip_hard_sl=False
+15:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:02:00  INFO   BAR  339 2026-10-16 15:01:00 call=   80.25 put=  100.00 spot= 23088.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=115
+15:02:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=116 close=76.95 entry=81.15 pnl=-5.18% sl=61.15 ivz=1.42 oichg=0.16 st_dir=1 skip_hard_sl=False
+15:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:03:00  INFO   BAR  340 2026-10-16 15:02:00 call=   83.90 put=   94.95 spot= 23094.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=116
+15:03:00  INFO     [GRID] legs with live price: 42/42
+15:03:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=117 close=72.65 entry=81.15 pnl=-10.47% sl=61.15 ivz=0.20 oichg=-1.83 st_dir=1 skip_hard_sl=False
+15:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:04:00  INFO   BAR  341 2026-10-16 15:03:00 call=   84.95 put=   93.45 spot= 23097.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=117
+15:04:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=118 close=71.45 entry=81.15 pnl=-11.95% sl=61.15 ivz=0.10 oichg=-1.49 st_dir=1 skip_hard_sl=False
+15:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:05:00  INFO   BAR  342 2026-10-16 15:04:00 call=   85.95 put=   92.00 spot= 23099.45 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=118
+15:05:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=119 close=70.45 entry=81.15 pnl=-13.19% sl=61.15 ivz=-0.03 oichg=-0.28 st_dir=1 skip_hard_sl=False
+15:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:06:00  INFO   BAR  343 2026-10-16 15:05:00 call=   88.25 put=   91.80 spot= 23103.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=119
+15:06:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=120 close=70.15 entry=81.15 pnl=-13.56% sl=61.15 ivz=0.89 oichg=-0.46 st_dir=1 skip_hard_sl=False
+15:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:07:00  INFO   BAR  344 2026-10-16 15:06:00 call=   83.45 put=   94.75 spot= 23096.95 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=120
+15:07:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=121 close=72.50 entry=81.15 pnl=-10.66% sl=61.15 ivz=0.61 oichg=-0.33 st_dir=1 skip_hard_sl=False
+15:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:08:00  INFO   BAR  345 2026-10-16 15:07:00 call=   83.70 put=   94.85 spot= 23097.30 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=121
+15:08:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=122 close=72.90 entry=81.15 pnl=-10.17% sl=61.15 ivz=0.98 oichg=1.13 st_dir=1 skip_hard_sl=False
+15:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:09:00  INFO   BAR  346 2026-10-16 15:08:00 call=   81.50 put=   96.85 spot= 23094.35 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=122
+15:09:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=123 close=74.50 entry=81.15 pnl=-8.19% sl=61.15 ivz=1.31 oichg=0.00 st_dir=1 skip_hard_sl=False
+15:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:10:00  INFO   BAR  347 2026-10-16 15:09:00 call=   80.20 put=   98.40 spot= 23090.50 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=123
+15:10:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=124 close=75.90 entry=81.15 pnl=-6.47% sl=61.15 ivz=1.07 oichg=-1.43 st_dir=1 skip_hard_sl=False
+15:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:11:00  INFO   BAR  348 2026-10-16 15:10:00 call=   79.65 put=   98.80 spot= 23094.80 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=124
+15:11:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=125 close=75.90 entry=81.15 pnl=-6.47% sl=61.15 ivz=2.45 oichg=0.00 st_dir=1 skip_hard_sl=False
+15:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:12:00  INFO   BAR  349 2026-10-16 15:11:00 call=   81.70 put=   95.05 spot= 23098.65 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=125
+15:12:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=126 close=73.35 entry=81.15 pnl=-9.61% sl=61.15 ivz=1.38 oichg=-0.92 st_dir=1 skip_hard_sl=False
+15:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:13:00  INFO   BAR  350 2026-10-16 15:12:00 call=   83.80 put=   92.65 spot= 23105.05 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=126
+15:13:00  INFO     [GRID] legs with live price: 42/42
+15:13:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=127 close=70.50 entry=81.15 pnl=-13.12% sl=61.15 ivz=1.02 oichg=-1.70 st_dir=1 skip_hard_sl=False
+15:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:14:00  INFO   BAR  351 2026-10-16 15:13:00 call=   84.00 put=   91.65 spot= 23108.70 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=127
+15:14:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=128 close=69.80 entry=81.15 pnl=-13.99% sl=61.15 ivz=1.57 oichg=-2.59 st_dir=1 skip_hard_sl=False
+15:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:15:00  INFO   BAR  352 2026-10-16 15:14:00 call=   86.80 put=   90.25 spot= 23121.60 buf=8000/8000 vix=14.4 IN SHORT entry=81.15 bars=128
+15:15:00  INFO     [EXIT-CHECK] signal=SHORT bar_held=129 close=68.85 entry=81.15 pnl=-15.16% sl=61.15 ivz=3.38 oichg=-0.07 st_dir=1 skip_hard_sl=False
+15:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+15:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+16:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+17:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:49:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:50:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:51:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:52:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:53:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:54:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:55:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:56:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:57:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:58:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+18:59:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:00:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:01:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:02:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:03:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:04:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:05:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:06:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:07:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:08:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:09:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:10:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:11:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:12:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:13:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:14:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:15:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:16:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:17:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:18:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:19:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:20:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:21:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:22:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:23:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:24:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:25:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:26:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:27:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:28:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:29:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:30:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:31:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:32:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:33:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:34:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:35:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:36:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:37:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:38:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:39:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:40:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:41:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:42:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:43:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:44:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:45:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:46:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:47:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:48:00  WARNING  [FEED] Clock boundary flush closed the accumulated bar
+19:49:02  WARNING  [FEED] Clock boundary flush closed the accumulated bar

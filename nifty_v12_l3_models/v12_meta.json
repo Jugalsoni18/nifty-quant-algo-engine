@@ -1,0 +1,24 @@
+{
+  "version": "v12_l4",
+  "label_method": "live_aligned_exit_simulation_10pct_target",
+  "short_label": "ATMminus1 put reaches 10% (live-constrained) before call",
+  "long_label": "ATMminus1 call reaches 10% (live-constrained) before put",
+  "horizon_bars": 160,
+  "static_sl_points": 20.0,
+  "iv_zscore_exit": 1.8,
+  "profit_target_pct": 10.0,
+  "persist_window": 5,
+  "train_end": "2023-12-31",
+  "val_end": "2024-12-31",
+  "n_features": 245,
+  "test_auc": 0.9748685481798308,
+  "best_thresh": 0.85,
+  "best_acc_at_thr": 0.9729011894222257,
+  "expiry_dow": 1,
+  "fixes_applied": [
+    "SL matches live static-20pt (was flat 9pct)",
+    "HORIZON matches live 160-bar time-stop (was 15)",
+    "IV z-score matches live 1.8 (was 1.5)",
+    "label is 10pct profit TARGET, not low profit FLOOR"
+  ]
+}

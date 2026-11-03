@@ -1,0 +1,14 @@
+catboost
+dhanhq
+joblib
+kiteconnect
+lightgbm
+numpy
+pandas
+pyarrow
+py_vollib
+requests
+scikit-learn
+urllib3
+websockets
+xgboost
