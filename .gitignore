@@ -1,3 +1,4 @@
 *.pkl
-.venv/
 venv/
+.venv/
+nifty_v12_l3_models/
